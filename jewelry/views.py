@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+
 from django.shortcuts import render
 
 
@@ -7,5 +7,13 @@ def home(request):
     return render(request, 'home.html')
 
 
-def customer(request):
-    return HttpResponse('Welcome Client!')
+def contact(request):
+    return render(request, 'contact.html')
+
+
+def login(request):
+    return render(request, 'login.html')
+
+
+def jewel(request):
+    return render(request, 'jewel.html')

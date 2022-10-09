@@ -1,8 +1,10 @@
 from django.urls import path
 
-from jewelry.views import customer, home
+from jewelry.views import contact, home, jewel, login
 
 urlpatterns = [
     path('', home),
-    path('customer/', customer)
+    path('contact/', contact),
+    path('login/', login),
+    path('jewel/', jewel)
 ]
