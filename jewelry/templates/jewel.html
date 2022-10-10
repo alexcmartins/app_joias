@@ -1,39 +1,206 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Joia</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" 
-    integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css" integrity="sha512-+oRH6u1nDGSm3hH8poU85YFIVTdSnS2f+texdPGrURaJh8hzmhMiZrQth6l56P4ZQmxeZzd2DqVEMqQoJ8J89A==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/regular.min.css" integrity="sha512-aNH2ILn88yXgp/1dcFPt2/EkSNc03f9HBFX0rqX3Kw37+vjipi1pK3L9W08TZLhMg4Slk810sPLdJlNIjwygFw==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/solid.min.css" integrity="sha512-uj2QCZdpo8PSbRGL/g5mXek6HM/APd7k/B5Hx/rkVFPNOxAQMXD+t+bG4Zv8OAdUpydZTU3UHmyjjiHv2Ww0PA==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+{% include 'partials/head.html' %}
 
-</head>
 <body>
-    <nav class="nav nav-pills flex-column flex-sm-row">
-        <a class="flex-sm-fill text-sm-center nav-link" href="/"><i class="fa-solid fa-house"></i>Home</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="/jewel"><i class="fa-regular fa-gem"></i>Joias</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="#"><i class="fa-solid fa-file-contract"></i>Controles</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="/contact"><i class="fa-solid fa-address-book"></i>Contatos</a>
-        <a class="flex-sm-fill text-sm-center nav-link" href="/login"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
-      </nav>
+    <header class="main-header-container">
+        <div class="main-header container">
+            <nav class="nav nav-pills flex-column flex-sm-row">
+                <a class="flex-sm-fill text-sm-center nav-link" href="/"><i class="fa-solid fa-house"></i>Home</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="/jewel"><i class="fa-regular fa-gem"></i>Joias</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="#"><i
+                        class="fa-solid fa-file-contract"></i>Controles</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="/contact"><i
+                        class="fa-solid fa-address-book"></i>Contatos</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="/login"><i
+                        class="fa-solid fa-right-from-bracket"></i>Sair</a>
+            </nav>
+        </div>
+    </header>
     <div class="container-fluid">
-        ...
+        <form action="?" method="GET" class="d-flex" role="search">
+            <input class="form-control me-2" type="text" name="name" placeholder="Search" autocomplete=""
+                aria-label="Search" id="" value="">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-light">Clean</button>
+        </form>
+        <div class="table-responsive">
+            <table id="data_jewel" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Model</th>
+                        <th>Weight</th>
+                        <th>Metal</th>
+                        <th>Stone</th>
+                        <th>Foundry</th>
+                        <th>Workshop</th>
+                        <th>Value</th>
+                        <th>+ Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HEAVENLY BEAUTY</td>
+                        <td>Alianças</td>
+                        <td>13.52</td>
+                        <td>Ouro 585 Branco</td>
+                        <td>Diamante</td>
+                        <td>Bambo</td>
+                        <td>Oseas</td>
+                        <td>R$3.460,00</td>
+                        <td>
+                            <button type="button" class="btn btn_info" data-bs-toggle="popover"
+                                data-bs-placement="left" data-bs-custom-class="custom-popover"
+                                data-bs-title="Custom popover"
+                                data-bs-content="This popover is themed via CSS variables.">
+                                + Info
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ANEL GISELLE</td>
+                        <td>Anéis</td>
+                        <td>3.61</td>
+                        <td>Ouro 585 Amarelo</td>
+                        <td>Perola</td>
+                        <td>Jose</td>
+                        <td>Paulinho</td>
+                        <td>R$1.320,00</td>
+                        <td>
+                            <button type="button" class="btn btn_info" data-bs-toggle="popover"
+                                data-bs-placement="left" data-bs-custom-class="custom-popover"
+                                data-bs-title="Custom popover"
+                                data-bs-content="This popover is themed via CSS variables.">
+                                + Info
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GLAMIRA PINGENTE ARLENYS</td>
+                        <td>Colares</td>
+                        <td>0.49</td>
+                        <td>Ouro 750 Amarelo</td>
+                        <td>Esmeralda</td>
+                        <td>Paulo</td>
+                        <td>Serafim</td>
+                        <td>R$2.510,00</td>
+                        <td>
+                            <button type="button" class="btn btn_info" data-bs-toggle="popover"
+                                data-bs-placement="left" data-bs-custom-class="custom-popover"
+                                data-bs-title="Custom popover"
+                                data-bs-content="This popover is themed via CSS variables.">
+                                + Info
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GLAMIRA PINGENTE CROCE</td>
+                        <td>Colares</td>
+                        <td>1.17</td>
+                        <td>Ouro 750 Amarelo</td>
+                        <td>Rubi</td>
+                        <td>Saulo</td>
+                        <td>Oseas</td>
+                        <td>R$1.970,00</td>
+                        <td>
+                            <button type="button" class="btn btn_info" data-bs-toggle="popover"
+                                data-bs-placement="left" data-bs-custom-class="custom-popover"
+                                data-bs-title="Custom popover"
+                                data-bs-content="This popover is themed via CSS variables.">
+                                + Info
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ANEL GISELLE</td>
+                        <td>Anéis</td>
+                        <td>3.61</td>
+                        <td>Ouro 585 Amarelo</td>
+                        <td>Perola</td>
+                        <td>Jose</td>
+                        <td>Paulinho</td>
+                        <td>R$1.320,00</td>
+                        <td>
+                            <button type="button" class="btn btn_info" data-bs-toggle="popover"
+                                data-bs-placement="left" data-bs-custom-class="custom-popover"
+                                data-bs-title="Custom popover"
+                                data-bs-content="This popover is themed via CSS variables.">
+                                + Info
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ANEL GISELLE</td>
+                        <td>Anéis</td>
+                        <td>3.61</td>
+                        <td>Ouro 585 Amarelo</td>
+                        <td>Perola</td>
+                        <td>Jose</td>
+                        <td>Paulinho</td>
+                        <td>R$1.320,00</td>
+                        <td>
+                            <button type="button" class="btn btn_info" data-bs-toggle="popover"
+                                data-bs-placement="left" data-bs-custom-class="custom-popover"
+                                data-bs-title="Custom popover"
+                                data-bs-content="This popover is themed via CSS variables.">
+                                + Info
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ANEL GISELLE</td>
+                        <td>Anéis</td>
+                        <td>3.61</td>
+                        <td>Ouro 585 Amarelo</td>
+                        <td>Perola</td>
+                        <td>Jose</td>
+                        <td>Paulinho</td>
+                        <td>R$1.320,00</td>
+                        <td>
+                            <button type="button" class="btn btn_info" data-bs-toggle="popover"
+                                data-bs-placement="left" data-bs-custom-class="custom-popover"
+                                data-bs-title="Custom popover"
+                                data-bs-content="This popover is themed via CSS variables.">
+                                + Info
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ANEL GISELLE</td>
+                        <td>Anéis</td>
+                        <td>3.61</td>
+                        <td>Ouro 585 Amarelo</td>
+                        <td>Perola</td>
+                        <td>Jose</td>
+                        <td>Paulinho</td>
+                        <td>R$1.320,00</td>
+                        <td>
+                            <button type="button" class="btn btn_info" data-bs-toggle="popover"
+                                data-bs-placement="left" data-bs-custom-class="custom-popover"
+                                data-bs-title="Custom popover"
+                                data-bs-content="This popover is themed via CSS variables.">
+                                + Info
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            var popoverList = popoverTriggerList.map(function (element) {
+                return new bootstrap.Popover(element);
+            });
+        });    
+    </script>
+
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>
