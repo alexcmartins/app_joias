@@ -44,7 +44,6 @@
             font-family: 'Inter Tight', sans-serif;
             box-sizing: boder-box;
             color: var(--primary-color-text);
-            background: var(--primary-color-cream);
         }
 
         html {
@@ -57,7 +56,13 @@
         }
 
         .nav {
+            font-size: 2.2rem;
+            margin-top: 20px;
             --bs-nav-link-hover-color: var(--primary-color-text-hover);
+        }
+
+        i {
+            margin: 5px;
         }
 
         /* unvisited link */
@@ -81,18 +86,40 @@
         }
 
         .container-fluid {
-            max-width: 144rem;
+            max-width: 160rem;
             margin: 5rem auto;
+        }
+
+        .container_filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+            margin-bottom: 30px;
+            height: 35px;
         }
 
         .container {
             max-width: 144rem;
             margin: 0 auto;
-            font-size: 2.5rem;
         }
 
         .main-header-container {
             background: var(--primary-color-cream);
+        }
+
+        .table-striped {
+            border-radius: 10px;
+        }
+
+        #filter_table {
+            border-radius: 7px;
+            width: 60%;
+        }
+
+        #select_filter {
+            border-radius: 7px;
+            width: 20%;
         }
 
         #data_jewel tr:hover {
@@ -100,7 +127,11 @@
         }
 
         #data_jewel th {
-            background-color: var(--primary-color-light-purple);
+            background-color: rgb(206, 200, 200);
+        }
+
+        .popover-body {
+            font-size: 12px;
         }
 
         .custom-popover {
@@ -110,6 +141,7 @@
             --bs-popover-header-color: var(--bs-white);
             --bs-popover-body-padding-x: 1rem;
             --bs-popover-body-padding-y: .5rem;
+            --bs-popover-header-font-size: 1.5rem;
         }
 
         .btn {
@@ -117,11 +149,40 @@
         }
 
         .btn_info {
+            font-size: 12px;
             background-color: var(--primary-color-background-header);
         }
 
         .btn_info:hover {
             background-color: var(--primary-color-lime);
         }
+
+        .footer {
+            background-color: var(--primary-color-background-footer);
+            padding: 6px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            text-align: center;
+        }
     </style>
 </head>
+
+<body>
+    <header class="main-header-container">
+        <div class="main-header container">
+            <nav class="nav nav-pills flex-column flex-sm-row">
+                <a class="flex-sm-fill text-sm-center nav-link" href="/"><i class="fa-solid fa-house"></i>Home</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="/jewel"><i
+                        class="fa-regular fa-gem"></i>Jewelry</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="#"><i
+                        class="fa-solid fa-file-contract"></i>Controls</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="/contact"><i
+                        class="fa-solid fa-address-book"></i>Contacts</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="/login"><i
+                        class="fa-solid fa-right-from-bracket"></i>Exit</a>
+            </nav>
+        </div>
+    </header>
+</body>
