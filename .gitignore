@@ -82,3 +82,8 @@ venv.bak/
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Personal additions
+db.sqlite3
+db copy.sqlite3
+static/
