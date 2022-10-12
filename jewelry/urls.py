@@ -1,10 +1,10 @@
 from django.urls import path
 
-from jewelry.views import contact, home, jewel, login
+from . import views
 
 urlpatterns = [
-    path('', home),
-    path('contact/', contact),
-    path('login/', login),
-    path('jewel/', jewel)
+    path('', views.home),
+    path('contact/', views.contact),
+    path('login/', views.login),
+    path('jewel/', views.jewel),
 ]
