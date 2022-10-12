@@ -1,3 +1,4 @@
+from data import generator_jewel
 from django.shortcuts import render
 
 
@@ -15,4 +16,6 @@ def login(request):
 
 
 def jewel(request):
-    return render(request, 'jewelry/pages/jewel.html')
+    return render(request, 'jewelry/pages/jewel.html', context={
+        'jewelry': [generator_jewel() for _ in range(30)],
+    })

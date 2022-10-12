@@ -3,7 +3,27 @@
 {% block content %}
         {% include 'jewelry/partials/search.html' %}                
         <div class="table-responsive">
-            {% include 'jewelry/partials/table.html' %} 
+            <table id="data_jewel" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Model</th>
+                        <th>Weight</th>
+                        <th>Metal</th>
+                        <th>Stone</th>
+                        <th>Foundry</th>
+                        <th>Workshop</th>
+                        <th>Value</th>
+                        <th>+ Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for jewel in jewelry %}
+                    {% include 'jewelry/partials/table.html' %}
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
     <!-- JavaScript for popover -->
     <script>
