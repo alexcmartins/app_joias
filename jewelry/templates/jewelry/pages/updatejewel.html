@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-main">
+    <span>Update Jewel</span>
+    <form class="row g-3">
+        <div class="col-md-4">
+            <label for="inputProduct" class="form-label">Product</label>
+            <input type="text" class="form-control" id="inputProduct">
+        </div>
+        <div class="col-md-1">
+            <label for="inputProductCode" class="form-label">Product Code</label>
+            <input type="text" class="form-control" id="inputProductCode">
+        </div>
+        <div class="col-sm-1">
+            <label for="inputCategory" class="form-label">Category</label>
+            <select id="inputCategory" class="form-select">
+                <option selected>Choose...</option>
+                <option value="Ring">Ring</option>
+                <option value="Earring">Earring</option>
+                <option value="Necklace">Necklace</option>
+                <option value="Bracelet">Bracelet</option>
+                <option value="Alliance">Alliance</option>
+                <option value="1/2_Alliance">1/2 Alliance</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputModel" class="form-label">Model</label>
+            <input type="text" class="form-control" id="inputModel" placeholder="1234 Main St">
+        </div>
+        <div class="col-md-1">
+            <label for="inputGenre" class="form-label">Genre</label>
+            <select id="inputCategory" class="form-select">
+                <option selected>Choose...</option>
+                <option value="Man">Man</option>
+                <option value="Women">Women</option>
+                <option value="Unisex">Unisex</option>
+            </select>
+        </div>
+        <div class="col-md-1">
+            <label for="inputWeight" class="form-label">Weight</label>
+            <input type="text" class="form-control" id="inputWeight">
+        </div>
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

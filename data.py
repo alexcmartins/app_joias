@@ -13,9 +13,9 @@ def generator_jewel():
         'foundry': fake.name(),
         'workshop': fake.name(),
         'value': fake.random_number(digits=5),
-        'note': fake.text(),
+        'note': fake.text(600),
         'cover': {
-            'url': 'https://loremflickr.com/320/240/jewel'
+            'url': 'https://loremflickr.com/320/240/gold'
         }
     }
 

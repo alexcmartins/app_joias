@@ -2,11 +2,12 @@
 
 {% block content %}
         {% include 'jewelry/partials/search.html' %}                
-        <div class="table-responsive">
+        <div class="container-main">
             <table id="data_jewel" class="table table-striped">
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>image</th>
                         <th>Name</th>
                         <th>Model</th>
                         <th>Weight</th>
@@ -25,6 +26,7 @@
                 </tbody>
             </table>
         </div>
+
     <!-- JavaScript for popover -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -34,4 +36,5 @@
             });
         });    
     </script>
+
 {% endblock content %}

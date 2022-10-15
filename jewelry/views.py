@@ -19,3 +19,15 @@ def jewel(request):
     return render(request, 'jewelry/pages/jewel.html', context={
         'jewelry': [generator_jewel() for _ in range(30)],
     })
+
+
+def newjewel(request):
+    return render(request, 'jewelry/pages/newjewel.html')
+
+
+def updatejewel(request):
+    return render(request, 'jewelry/pages/updatejewel.html')
+
+
+def settingsjewel(request):
+    return render(request, 'jewelry/pages/settingsjewel.html')

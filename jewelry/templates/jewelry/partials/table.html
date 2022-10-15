@@ -2,6 +2,7 @@
     <td>
         <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
     </td>
+    <td><img src="{{jewel.cover.url}}" alt="temp"></td>
     <td>{{jewel.name}}</td>
     <td>{{jewel.models}}</td>
     <td>{{jewel.weight}} g</td>
@@ -12,8 +13,8 @@
     <td>R$ {{jewel.value|floatformat }}</td>
     <td>
         <button type="button" class="btn btn_info" data-bs-toggle="popover" data-bs-placement="left"
-            data-bs-custom-class="custom-popover" data-bs-title={{jewel.name}}
-            data-bs-content={{jewel.note}}>
+            data-bs-custom-class="custom-popover" data-bs-title="{{jewel.name}}"
+            data-bs-content="{{jewel.note}}">
             + Info
         </button>
     </td>

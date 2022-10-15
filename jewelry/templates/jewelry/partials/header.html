@@ -1,15 +1,36 @@
 <header class="main-header-container">
-    <div class="main-header container">
-        <nav class="nav nav-pills flex-column flex-sm-row">
-            <a class="flex-sm-fill text-sm-center nav-link" href="/"><i class="fa-solid fa-house"></i>Home</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="/jewel"><i
-                    class="fa-regular fa-gem"></i>Jewelry</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="#"><i
-                    class="fa-solid fa-file-contract"></i>Controls</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="/contact"><i
-                    class="fa-solid fa-address-book"></i>Contacts</a>
-            <a class="flex-sm-fill text-sm-center nav-link" href="/login"><i
-                    class="fa-solid fa-right-from-bracket"></i>Exit</a>
-        </nav>
-    </div>
+        <div class="main-header container">
+                <ul class="nav nav-pills justify-content-center">
+                        <li class="nav-item">
+                                <a class="nav-link" href="/"><i class="fa-solid fa-house"></i>Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button"
+                                        aria-expanded="false"><i class="fa-regular fa-gem"></i>Jewelry</a>
+                                <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/jewel"><i class="fa-solid fa-list"></i>List
+                                                        All</a></li>
+                                        <li><a class="dropdown-item" href="/newjewel"><i class="fa-solid fa-plus"></i>New</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/updatejewel"><i
+                                                                class="fa-solid fa-pen-nib"></i>Update</a></li>
+                                        <li>
+                                                <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="/settingsjewel"><i
+                                                                class="fa-solid fa-sliders"></i>Settings</a></li>
+                                </ul>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="/contact"><i class="fa-solid fa-address-book"></i>Contacts</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button"
+                                        aria-expanded="false">User</a>
+                                <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/login">Logout</a></li>
+                                </ul>
+                        </li>
+                </ul>
+        </div>
 </header>
