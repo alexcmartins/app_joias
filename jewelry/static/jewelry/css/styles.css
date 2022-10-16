@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&display=swap');
+
+:root {
+    --primary-color-text: #38184C;
+    --primary-color-background: #FFFFFA;
+    --primary-color-background-footer: #1C646D;
+    --primary-color-background-header: #CEF09D;
+    --primary-color-text-hover: #1F0802;
+    --primary-color-lime: #A0CD60;
+    --primary-color-cream: #f7f4eb;
+    --primary-color-light-purple: #E0E2FF;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    /*font-size: 1.5rem;*/
+    font-family: 'Inter Tight', sans-serif;
+    box-sizing: boder-box;
+    color: var(--primary-color-text);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+    background: var(--primary-color-cream);
+}
+
+/* menu settings*/
+.dropdown-menu.show {
+    display: block;
+    transform: translate(50px, 50px);
+    background-color: var(--primary-color-cream);
+}
+
+.nav {
+    font-size: 2.5rem;
+    --bs-nav-link-hover-color: var(--primary-color-text-hover);
+    margin-top: 1rem;
+}
+
+/* icon adjustments */
+i {
+    margin: 5px;
+}
+
+/* unvisited link */
+a:link {
+    color: var(--primary-color-text);
+}
+
+/* visited link */
+a:visited {
+    color: var(--primary-color-text);
+}
+
+/* mouse over link */
+a:hover {
+    color: var(--primary-color-text-hover);
+}
+
+/* selected link */
+a:active {
+    color: var(--primary-color-text);
+}
+
+/*search adjustments*/
+.search-form {
+    border: .2rem solid var(--primary-color-text);
+    max-width: 65rem;
+    position: relative;
+    margin: 5rem auto;
+    border-radius: 0.5rem;
+    transition: all 300ms ease-in-out;
+}
+
+.search-form:focus-within {
+    border-color: #A0CD60;
+    background: #ddd;
+}
+
+.search-button:focus {
+    outline: 1px solid var(--primary-color-background-header);
+    background: rgba(0, 0, 0, .05);
+}
+
+.search-form:focus-within .fa-magnifying-glass {
+    color: #A0CD60;
+
+}
+
+.search-input,
+.search-button {
+    border: none;
+    background: none;
+    outline: none;
+    padding: .7rem;
+
+}
+
+.search-input {
+    width: 100%;
+    padding-right: 3.5rem;
+}
+
+.search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.search-button:active {
+    border: none;
+    outline: none;
+}
+
+.fa-magnifying-glass {
+    font-size: 2.0rem;
+    outline: none;
+}
+
+/*central container settings*/
+.container {
+    font-size: 2.2rem;
+    margin-top: 20px;
+    --bs-nav-link-hover-color: var(--primary-color-text-hover);
+    margin: 0 auto;
+}
+
+.container-main {
+    max-width: 160rem;
+    margin: 5rem auto;
+}
+
+.main-header-container {
+    background: var(--primary-color-cream);
+}
+
+/*Fixed top table*/
+.table-striped {
+    overflow-y: auto;
+}
+
+.table-striped thead th {
+    position: sticky;
+    top: 0;
+}
+
+/*table adjustments*/
+.table-striped {
+    border-radius: 10px;
+}
+
+.table-responsive {
+    max-height: 700px;
+}
+
+img {
+    max-height: 70px;
+    max-width: 100px;
+}
+
+#data_jewel tr:hover {
+    background-color: #ddd;
+}
+
+#data_jewel th {
+    background-color: rgb(206, 200, 200);
+}
+
+/*btn generic adjustments*/
+.btn {
+    transition-duration: 0.4s;
+}
+
+/*popover adjustments*/
+.popover-body {
+    font-size: 15px;
+    background-color: beige;
+    width: 100%;
+}
+
+.custom-popover {
+    --bs-popover-max-width: 35rem;
+    --bs-popover-border-color: var(--primary-color-text);
+    --bs-popover-header-bg: var(--primary-color-text);
+    --bs-popover-header-color: var(--bs-white);
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+    --bs-popover-header-font-size: 1.5rem;
+}
+
+.btn_info {
+    font-size: 12px;
+    background-color: var(--primary-color-background-header);
+}
+
+.btn_info:hover {
+    background-color: var(--primary-color-lime);
+}
+
+/*footer adjustments*/
+.container-footer {
+    background-color:mediumpurple;
+    
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.container-footer h4, p {
+    color: #FFFFFA;
+}
+
+.container-footer h4 {
+    margin-top: 6px;
+}
+
+/*Table Workshop adjustments*/
