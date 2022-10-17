@@ -12,10 +12,10 @@ def generator_jewel():
         'stone': fake.word(),
         'foundry': fake.name(),
         'workshop': fake.name(),
-        'value': fake.random_number(digits=5),
+        'value': float(fake.random_number(digits=5)),
         'note': fake.text(600),
         'cover': {
-            'url': 'https://loremflickr.com/320/240/gold'
+            'url': 'https://loremflickr.com/1920/1080/gold'
         }
     }
 

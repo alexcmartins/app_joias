@@ -2,19 +2,25 @@
     <td>
         <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
     </td>
-    <td><img src="{{jewel.cover.url}}" alt="temp"></td>
+    <td>
+        <button type="button" class="btn btn_info" data-bs-toggle="popover" data-bs-placement="right"
+            data-bs-custom-class="custom-popover" data-bs-title="{{jewel.name}}"
+            data-bs-html="true" data-bs-content='<image src={{jewel.cover.url}}>'>
+            Image
+        </button>
+        </td>
     <td>{{jewel.name}}</td>
     <td>{{jewel.models}}</td>
-    <td>{{jewel.weight}} g</td>
+    <td>{{jewel.weight|floatformat:"2"}} g</td>
     <td>{{jewel.metal}}</td>
     <td>{{jewel.stone}}</td>
     <td>{{jewel.foundry}}</td>
     <td>{{jewel.workshop}}</td>
-    <td>R$ {{jewel.value|floatformat }}</td>
+    <td>R$ {{jewel.value|floatformat:"2g"}}</td>
     <td>
         <button type="button" class="btn btn_info" data-bs-toggle="popover" data-bs-placement="left"
             data-bs-custom-class="custom-popover" data-bs-title="{{jewel.name}}"
-            data-bs-content="{{jewel.note}}">
+            data-bs-content="{{jewel.name}}: {{jewel.note}}">
             + Info
         </button>
     </td>

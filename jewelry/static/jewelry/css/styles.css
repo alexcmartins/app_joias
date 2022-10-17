@@ -8,7 +8,8 @@
     --primary-color-text-hover: #1F0802;
     --primary-color-lime: #A0CD60;
     --primary-color-cream: #f7f4eb;
-    --primary-color-light-purple: #E0E2FF;
+    --primary-color-light-purple: #C66BFF;
+    --primary-color-purple-second: #6B2299;
 }
 
 * {
@@ -37,9 +38,9 @@ body {
 }
 
 .nav {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     --bs-nav-link-hover-color: var(--primary-color-text-hover);
-    margin-top: 1rem;
+    margin: 1rem;
 }
 
 /* icon adjustments */
@@ -125,14 +126,34 @@ a:active {
 /*central container settings*/
 .container {
     font-size: 2.2rem;
-    margin-top: 20px;
+    margin-top: 2rem;
     --bs-nav-link-hover-color: var(--primary-color-text-hover);
     margin: 0 auto;
 }
 
+.container-fluid {
+    max-height: 30%;
+}
+
 .container-main {
-    max-width: 160rem;
+    max-width: 90%;
     margin: 5rem auto;
+}
+
+
+
+/*Adjustments menu left*/
+@media screen and (min-width : 90rem) {
+    .main-header-container {
+        top: 0;
+        margin-top: 7rem;
+        left: 0;
+        width: 20rem;
+        position: absolute;
+    }
+    body{
+        border-left: 20rem solid #f7f4eb;
+    }
 }
 
 .main-header-container {
@@ -149,27 +170,32 @@ a:active {
     top: 0;
 }
 
-/*table adjustments*/
-.table-striped {
-    border-radius: 10px;
+#data_jewel th {
+    background-color: var(--primary-color-background-header);
 }
 
-.table-responsive {
-    max-height: 700px;
-}
+
+/*table list jewelry adjustments*/
+.table-striped {
+    border-radius: 1rem;
+    font-size: 1.5rem;
+} 
 
 img {
-    max-height: 70px;
-    max-width: 100px;
+    height: 100%;
+    width: 100%;
 }
 
 #data_jewel tr:hover {
     background-color: #ddd;
 }
 
-#data_jewel th {
-    background-color: rgb(206, 200, 200);
+thead {
+    background-color: var(--primary-color-background-header);
 }
+
+/*Table list services newjewelry*/
+
 
 /*btn generic adjustments*/
 .btn {
@@ -178,9 +204,14 @@ img {
 
 /*popover adjustments*/
 .popover-body {
-    font-size: 15px;
+    font-size: 1.5rem;
     background-color: beige;
-    width: 100%;
+    width: 64rem;
+    height: 48rem;
+}
+
+.popover-header {
+    width: 64rem;
 }
 
 .custom-popover {
@@ -194,7 +225,7 @@ img {
 }
 
 .btn_info {
-    font-size: 12px;
+    font-size: 1.2rem;
     background-color: var(--primary-color-background-header);
 }
 
@@ -204,9 +235,9 @@ img {
 
 /*footer adjustments*/
 .container-footer {
-    background-color:mediumpurple;
+    background-color: #AA49E5;
     
-    height: 70px;
+    height: 7rem;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -219,7 +250,7 @@ img {
 }
 
 .container-footer h4 {
-    margin-top: 6px;
+    margin-top: 0.6rem;
 }
 
 /*Table Workshop adjustments*/
