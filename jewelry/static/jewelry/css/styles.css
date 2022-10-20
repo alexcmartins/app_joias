@@ -31,14 +31,8 @@ body {
 }
 
 /* menu settings*/
-.dropdown-menu.show {
-    display: block;
-    transform: translate(50px, 50px);
-    background-color: var(--primary-color-cream);
-}
-
 .nav {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     --bs-nav-link-hover-color: var(--primary-color-text-hover);
     margin: 1rem;
 }
@@ -68,7 +62,7 @@ a:active {
     color: var(--primary-color-text);
 }
 
-/*search adjustments*/
+/* search adjustments */
 .search-form {
     border: .2rem solid var(--primary-color-text);
     max-width: 65rem;
@@ -126,60 +120,58 @@ a:active {
 /*central container settings*/
 .container {
     font-size: 2.2rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     --bs-nav-link-hover-color: var(--primary-color-text-hover);
     margin: 0 auto;
 }
 
-.container-fluid {
-    max-height: 30%;
-}
-
 .container-main {
-    max-width: 90%;
-    margin: 5rem auto;
-}
-
-
-
-/*Adjustments menu left*/
-@media screen and (min-width : 90rem) {
-    .main-header-container {
-        top: 0;
-        margin-top: 7rem;
-        left: 0;
-        width: 20rem;
-        position: absolute;
-    }
-    body{
-        border-left: 20rem solid #f7f4eb;
-    }
+    max-width: 95%;
+    margin: 3.5rem auto;
 }
 
 .main-header-container {
     background: var(--primary-color-cream);
 }
 
-/*Fixed top table*/
-.table-striped {
-    overflow-y: auto;
-}
+/*Adjustments menu left*/
+/*@media screen and (min-width : 64rem) {
+    .main-header-container {
+        top: 0;
+        left: 0;
+        width: 10rem;
+        position: absolute;
+        background: #CEF09D;
+        height: 100%;
+        text-align: center;
+        justify-content: center;
+        font-variant: all-petite-caps;
+    }
 
+    .main-header {
+        margin-top: 20rem;
+    }
+
+    body{
+        border-left: 10rem solid #f7f4eb;
+    }
+}*/
+
+/*Fixed top table*/
 .table-striped thead th {
     position: sticky;
     top: 0;
 }
 
-#data_jewel th {
-    background-color: var(--primary-color-background-header);
-}
-
-
 /*table list jewelry adjustments*/
 .table-striped {
     border-radius: 1rem;
     font-size: 1.5rem;
-} 
+}
+
+#data_jewel th {
+    background-color: var(--primary-color-background-header);
+}
 
 img {
     height: 100%;
@@ -194,9 +186,6 @@ thead {
     background-color: var(--primary-color-background-header);
 }
 
-/*Table list services newjewelry*/
-
-
 /*btn generic adjustments*/
 .btn {
     transition-duration: 0.4s;
@@ -206,12 +195,12 @@ thead {
 .popover-body {
     font-size: 1.5rem;
     background-color: beige;
-    width: 64rem;
-    height: 48rem;
+    width: 100%;
+    height: 100%;
 }
 
 .popover-header {
-    width: 64rem;
+    width: 100%;
 }
 
 .custom-popover {
@@ -233,24 +222,99 @@ thead {
     background-color: var(--primary-color-lime);
 }
 
-/*footer adjustments*/
-.container-footer {
-    background-color: #AA49E5;
-    
-    height: 7rem;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
-}
-
-.container-footer h4, p {
-    color: #FFFFFA;
-}
-
-.container-footer h4 {
-    margin-top: 0.6rem;
-}
-
 /*Table Workshop adjustments*/
+
+
+/*Table list services newjewelry*/
+
+
+/*Card NewJewelry*/
+.row.g-3 {
+    padding: 0.8rem;
+}
+
+.card.mb-5.jewel{
+    max-height: 45rem;
+    overflow-y:scroll;
+}
+
+.card.mb-5.workshop{
+    overflow-y:scroll;
+}
+
+.card.mb-5.stone{
+    overflow-y:scroll;
+}
+
+/*Card Home*/
+.card.mb-3 {
+    width: 25%;
+    height: 50rem;
+    float: right;
+}
+
+.card.mb-5.home {
+    width: 70%;
+    height: 50rem;
+    float: left;
+}
+
+.contact-area {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+.contact {
+    position: relative;
+    max-width: 420px;
+    padding: 40px 20px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+    
+main {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+      
+section {
+    border-radius: 5px;
+    float: left;
+    width: 100%;
+    background-color: var(--primary-color-background-header);
+}
+        
+.content {
+    float: left;
+    width: 100%;
+    padding: 20px 30px 50px 30px;
+    position: relative;
+    text-align: center;
+    display: flex;
+}
+
+.img-content {
+    display: flex;
+    width: 70px;
+    border-radius: 50%;
+}
+
+aside {
+    float: left;
+    width: 100%;
+    color: var(--primary-color-background);
+    margin-top: 5px;
+}
+
+
+.h1-aside {
+    font-weight: 100;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+                  
+.p-aside {
+    font-size: 14px;
+}

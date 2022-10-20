@@ -1,36 +1,80 @@
 <header class="main-header-container">
         <div class="main-header container">
-                <ul class="nav nav-pills justify-content-center">
-                        <li class="nav-item">
-                                <a class="nav-link" href="/"><i class="fa-solid fa-house"></i>Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button"
-                                        aria-expanded="false"><i class="fa-regular fa-gem"></i>Jewelry</a>
-                                <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/jewel"><i class="fa-solid fa-list"></i>List
-                                                        All</a></li>
-                                        <li><a class="dropdown-item" href="/newjewel"><i class="fa-solid fa-plus"></i>New</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="/updatejewel"><i
-                                                                class="fa-solid fa-pen-nib"></i>Update</a></li>
-                                        <li>
-                                                <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="/settingsjewel"><i
-                                                                class="fa-solid fa-sliders"></i>Settings</a></li>
-                                </ul>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" href="/contact"><i class="fa-solid fa-address-book"></i>Contacts</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button"
-                                        aria-expanded="false">User</a>
-                                <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/login">Logout</a></li>
-                                </ul>
-                        </li>
-                </ul>
+                <nav class="navbar navbar-expand-md">
+                        <div class="container-fluid">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo02">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                                <li class="nav-item">
+                                                        <a class="nav-link" href="/"><i
+                                                                        class="fa-solid fa-house"></i>Home</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                        <a class="nav-link collapse-toggle" data-bs-toggle="collapse"
+                                                                href="#CollapseJewel" role="button"
+                                                                aria-expanded="false"><i
+                                                                        class="fa-solid fa-gem"></i>Jewelry</a>
+
+                                                        <div class="row">
+                                                                <div class="col">
+                                                                        <div class="collapse multi-collapse"
+                                                                                id="CollapseJewel">
+                                                                                <div class="card card-body"
+                                                                                        style=background:#f7f4eb>
+
+                                                                                        <a class="collapse-item"
+                                                                                                href="/jewel"><i
+                                                                                                        class="fa-solid fa-list"></i>List
+                                                                                                All</a>
+                                                                                        <a class="collapse-item"
+                                                                                                href="/newjewel"><i
+                                                                                                        class="fa-solid fa-plus"></i>New</a>
+                                                                                        <a class="collapse-item"
+                                                                                                href="/updatejewel"><i
+                                                                                                        class="fa-solid fa-pen-nib"></i>Update</a>
+                                                                                        <hr class="collapse-divider">
+                                                                                        <a class="collapse-item"
+                                                                                                href="/settingsjewel"><i
+                                                                                                        class="fa-solid fa-sliders"></i>Settings</a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </li>
+                                                <li class="nav-item">
+                                                        <a class="nav-link" href="/contact"><i
+                                                                        class="fa-solid fa-address-book"></i>Contacts</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                        <a class="nav-link collapse-toggle" data-bs-toggle="collapse"
+                                                                href="#CollapseUser" role="button"
+                                                                aria-expanded="false"><i
+                                                                        class="fa-solid fa-user"></i>User</a>
+
+                                                        <div class="row">
+                                                                <div class="col">
+                                                                        <div class="collapse multi-collapse"
+                                                                                id="CollapseUser">
+                                                                                <div class="card card-body"
+                                                                                        style=background:#f7f4eb>
+
+                                                                                        <a class="dropdown-item"
+                                                                                                href="/login"><i
+                                                                                                        class="fa-solid fa-right-from-bracket"></i>Logout</a>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+                                                </li>
+                                        </ul>
+                                </div>
+                        </div>
+                </nav>
+
         </div>
 </header>

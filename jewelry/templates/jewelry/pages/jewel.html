@@ -3,6 +3,8 @@
 {% block content %}
         {% include 'jewelry/partials/search.html' %}                
         <div class="container-main">
+            <div class="card mb-5 jewel">
+                <div class="card-header"><i class="fa-solid fa-ring"></i>List Jewelry</div>
             <table id="data_jewel" class="table table-striped">
                 <thead>
                     <tr>
@@ -25,6 +27,7 @@
                 {% endfor %}
                 </tbody>
             </table>
+        </div>
         </div>
 
     <!-- JavaScript for popover -->
