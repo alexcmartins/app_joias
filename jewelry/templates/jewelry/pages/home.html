@@ -12,28 +12,11 @@
         <div class="container-search-home">
             {% include 'jewelry/partials/search.html' %} 
         </div>
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-            {% include 'jewelry/partials/cardcontact.html' %}
-</div>
+        
+            {% for contact in contacts %}
+                {% include 'jewelry/partials/cardcontact.html' %}
+            {% endfor %}
+        </div>
 
 </div>
 {% endblock content %}

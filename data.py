@@ -20,6 +20,15 @@ def generator_jewel():
     }
 
 
+def generator_contact():
+    return {
+        'name': fake.name(),
+        'phone': fake.random_number(digits=11),
+        'company': fake.company(),
+        'email': fake.email()
+    }
+
+
 # print(generator_jewel())
 
 if __name__ == '__main__':

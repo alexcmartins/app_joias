@@ -1,14 +1,18 @@
-from data import generator_jewel
+from data import generator_contact, generator_jewel
 from django.shortcuts import render
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'jewelry/pages/home.html')
+    return render(request, 'jewelry/pages/home.html', context={
+        'contacts': [generator_contact() for _ in range(25)],
+    })
 
 
 def contact(request):
-    return render(request, 'jewelry/pages/contact.html')
+    return render(request, 'jewelry/pages/contact.html', context={
+        'contacts': [generator_contact() for _ in range(25)],
+    })
 
 
 def newcontact(request):
