@@ -11,6 +11,14 @@ def contact(request):
     return render(request, 'jewelry/pages/contact.html')
 
 
+def newcontact(request):
+    return render(request, 'jewelry/pages/newcontact.html')
+
+
+def updatecontact(request):
+    return render(request, 'jewelry/pages/updatecontact.html')
+
+
 def login(request):
     return render(request, 'jewelry/pages/login.html')
 

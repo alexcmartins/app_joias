@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container-blank"></div>
         <div class="container-search-jewel">
             {% include 'jewelry/partials/search.html' %}                
         </div>
         <div class="container-main">
+            <hr>
+            <div class="container-buttons">
+                <a href="/newjewel"><button class="btn btn-functions" arialabel="newjewel"><i class="fa-solid fa-plus"></i>New Jewel</button></a>
+                <a href="/updatejewel"><button class="btn btn-functions" arialabel="updatejewel"><i class="fa-solid fa-rotate-right"></i>Update Jewel</button></a>
+                <a href="#"><button class="btn btn-functions" arialabel="removejewel"><i class="fa-solid fa-trash"></i>Remove Jewel</button></a>
+                <a href="/settingsjewel"><button class="btn btn-functions" arialabel="settingsjewel"><i class="fa-solid fa-gear"></i>Settings Jewel</button></a>
+                <button class="btn btn-functions" arialabel="filterjewel"><i class="fa-solid fa-filter"></i>Filter Jewel</button>
+            </div>
             <div class="card mb-5 jewel">
                 <div class="card-header"><i class="fa-solid fa-ring"></i>List Jewelry</div>
             <table id="data_jewel" class="table table-striped">
