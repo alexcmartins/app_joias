@@ -1,9 +1,9 @@
 <div class="card mb-5">
     <div class="card-header"><i class="fa-solid fa-ring"></i>New Jewel</div>
 <form class="row g-3">
-    <div class="col-md-5">
-        <label for="inputProduct" class="form-label">Product</label>
-        <input type="text" class="form-control" id="inputProduct">
+    <div class="col-md-4">
+        <label for="inputProductName" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="inputProductName">
     </div>
     <div class="col-md-1">
         <label for="inputProductCode" class="form-label">Code</label>
@@ -21,9 +21,14 @@
             <option value="1/2_Alliance">1/2 Alliance</option>
         </select>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
         <label for="inputModel" class="form-label">Model</label>
-        <input type="text" class="form-control" id="inputModel" placeholder="1234 Main St">
+        <select id="inputModel" class="form-select">
+            <option value="" selected>Choose...</option>
+            <option value="Veneziana">Veneziana</option>
+            <option value="Cartier">Cartier</option>
+            <option value="Singapura">Singapura</option>
+        </select>
     </div>
     <div class="col-md-1">
         <label for="inputGenre" class="form-label">Genre</label>
@@ -35,91 +40,26 @@
         </select>
     </div>
     <div class="col-md-1">
-        <label for="inputWeight" class="form-label">Weight</label>
+        <label for="inputWeight" class="form-label">Weight gr</label>
         <input type="text" class="form-control" id="inputWeight">
     </div>
     <div class="col-md-1">
-        <label for="inputSIUnit" class="form-label">SI Unit</label>
-        <select id="inputSIUnit" class="form-select">
-            <option value="" selected>Choose...</option>
-            <option value="18K">18K</option>
-            <option value="Ouro 750">Ouro 750</option>
-            <option value="gr">gr</option>
-            <option value="mg">mg</option>
-            <option value="ct">ct</option>
-            <option value="pontos">pontos</option>
-            <option value="mm">mm</option>
-        </select>
-    </div>
-    <div class="col-md-1">
-        <label for="inputLength" class="form-label">Length</label>
+        <label for="inputLength" class="form-label">Length mm</label>
         <input type="text" class="form-control" id="inputLength">
     </div>
     <div class="col-md-1">
-        <label for="inputSIUnit" class="form-label">SI Unit</label>
-        <select id="inputSIUnit" class="form-select">
-            <option value="" selected>Choose...</option>
-            <option value="18K">18K</option>
-            <option value="Ouro 750">Ouro 750</option>
-            <option value="gr">gr</option>
-            <option value="mg">mg</option>
-            <option value="ct">ct</option>
-            <option value="pontos">pontos</option>
-            <option value="mm">mm</option>
-        </select>
-    </div>
-    <div class="col-md-1">
-        <label for="inputWidth" class="form-label">Width</label>
+        <label for="inputWidth" class="form-label">Width mm</label>
         <input type="text" class="form-control" id="inputWidth">
     </div>
     <div class="col-md-1">
-        <label for="inputSIUnit" class="form-label">SI Unit</label>
-        <select id="inputSIUnit" class="form-select">
-            <option value="" selected>Choose...</option>
-            <option value="18K">18K</option>
-            <option value="Ouro 750">Ouro 750</option>
-            <option value="gr">gr</option>
-            <option value="mg">mg</option>
-            <option value="ct">ct</option>
-            <option value="pontos">pontos</option>
-            <option value="mm">mm</option>
-        </select>
-    </div>
-    <div class="col-md-1">
-        <label for="inputHeight" class="form-label">Height</label>
+        <label for="inputHeight" class="form-label">Height mm</label>
         <input type="text" class="form-control" id="inputHeight">
     </div>
-    <div class="col-md-1">
-        <label for="inputSIUnit" class="form-label">SI Unit</label>
-        <select id="inputSIUnit" class="form-select">
-            <option value="" selected>Choose...</option>
-            <option value="18K">18K</option>
-            <option value="Ouro 750">Ouro 750</option>
-            <option value="gr">gr</option>
-            <option value="mg">mg</option>
-            <option value="ct">ct</option>
-            <option value="pontos">pontos</option>
-            <option value="mm">mm</option>
-        </select>
-    </div>
-    <div class="col-md-1">
-        <label for="inputThickness" class="form-label">Thickness</label>
+    <div class="col-md-2">
+        <label for="inputThickness" class="form-label">Thickness mm</label>
         <input type="text" class="form-control" id="inputThickness">
     </div>
     <div class="col-md-1">
-        <label for="inputSIUnit" class="form-label">SI Unit</label>
-        <select id="inputSIUnit" class="form-select">
-            <option value="" selected>Choose...</option>
-            <option value="18K">18K</option>
-            <option value="Ouro 750">Ouro 750</option>
-            <option value="gr">gr</option>
-            <option value="mg">mg</option>
-            <option value="ct">ct</option>
-            <option value="pontos">pontos</option>
-            <option value="mm">mm</option>
-        </select>
-    </div>
-    <div class="col-md-2">
         <label for="inputMetal" class="form-label">Metal</label>
         <select id="inputMetal" class="form-select">
             <option value="" selected>Choose...</option>
@@ -132,21 +72,25 @@
             <option value="Ouro 750 B/R">Ouro 750 B/R</option>
         </select>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
         <label for="inputImage" class="form-label">Image</label>
         <input type="file" class="form-control" id="inputImage">
     </div>
-    <div class="card mb-5 stone">
-        <div class="card-header"><i class="fa-solid fa-gem"></i>Stones/Pearl</div>
+    
+      <div class="col-md-6">
+    <div class="card mb-5 stones">
+        <div class="card-header"><i class="fa-solid fa-gem"></i>Stones</div>
         <div class="card-block p-0">
             <table class="table table-striped table-definition mb-5">
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Name</th>
-                        <th>Registration Date</th>
-                        <th>E-mail address</th>
-                        <th>Premium Plan</th>
+                        <th>Types</th>
+                        <th>Origin</th>
+                        <th>Amount</th>
+                        <th>Size</th>
+                        <th>Carat(ct)</th>
+                        <th>Value</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -157,34 +101,32 @@
                                 <span class="custom-control-indicator"></span>
                             </label>
                         </td>
-                        <td>John Lilki</td>
-                        <td>September 14, 2013</td>
-                        <td>jhlilk22@yahoo.com</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
                         <td>
-                            <label class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-indicator"></span>
-                            </label>
+                            <select class="form-select">
+                                <option value="" selected>Choose...</option>
+                                <option value="White Pearl">White Pearl</option>
+                                <option value="Pink Pearl">Pink Pearl</option>
+                                <option value="Black Pearl">Black Pearl</option>
+                                <option value="Diamond">Diamond</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="Emerald">Emerald</option>
+                            </select>
                         </td>
-                        <td>John Lilki</td>
-                        <td>September 14, 2013</td>
-                        <td>jhlilk22@yahoo.com</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
                         <td>
-                            <label class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-indicator"></span>
-                            </label>
+                            <input type="text" autocomplete="off" class="form-control" id="inputOrigin">
                         </td>
-                        <td>John Lilki</td>
-                        <td>September 14, 2013</td>
-                        <td>jhlilk22@yahoo.com</td>
-                        <td>No</td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputAmount">
+                        </td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputSize">
+                        </td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputCarat">
+                        </td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputValue">
+                        </td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -200,43 +142,21 @@
             </table>
         </div>
     </div>
-    <div id="carouselJewel" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselJewel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselJewel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselJewel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://cdn0.casamentos.pt/cat/566151--mfvo566151.jpg" class="d-block w-30" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://res.cloudinary.com/glamira/image/upload/c_limit,c_fill,dpr_1.0,f_auto,fl_lossy,q_auto/media/product/newgeneration/view/1/sku/8085/womenstone/diamond-zirconia_AAAAA/alloycolour/white.jpg" class="d-block w-30" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="https://images.tcdn.com.br/img/img_prod/932431/anel_solitario_memories_prata_1213_1_06e4a13d6f1e42521a4cabd5fc1b6900.jpg" class="d-block w-30" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselJewel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselJewel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    <div class="card mb-5 services">
-        <div class="card-header"><i class="fa-solid fa-clipboard"></i>Services</div>
+</div>
+<div class="col-md-6">
+    <div class="card mb-5 pearls">
+        <div class="card-header"><i class="fa-solid fa-droplet"></i>Pearls</div>
         <div class="card-block p-0">
             <table class="table table-striped table-definition mb-5">
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Name</th>
-                        <th>Registration Date</th>
-                        <th>E-mail address</th>
-                        <th>Premium Plan</th>
+                        <th>Types</th>
+                        <th>Amount</th>
+                        <th>Size</th>
+                        <th>Color</th>
+                        <th>Origin</th>
+                        <th>Value</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -247,11 +167,63 @@
                                 <span class="custom-control-indicator"></span>
                             </label>
                         </td>
-                        <td>John Lilki</td>
-                        <td>September 14, 2013</td>
-                        <td>jhlilk22@yahoo.com</td>
-                        <td>No</td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected>Choose...</option>
+                                <option value="White Pearl">White Pearl</option>
+                                <option value="Pink Pearl">Pink Pearl</option>
+                                <option value="Black Pearl">Black Pearl</option>
+                                <option value="Diamond">Diamond</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="Emerald">Emerald</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputAmount">
+                        </td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputSize">
+                        </td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputColor">                            
+                        </td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputOrigin">
+                        </td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputValue">
+                        </td>
                     </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th colspan="2">
+                            <button class="btn btn-primary float-right">Add</button>
+                            <button class="btn btn-default">Edit</button>
+                            <button class="btn btn-default">Remove</button>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="card mb-5 services">
+        <div class="card-header"><i class="fa-solid fa-clipboard"></i>Services</div>
+        <div class="card-block p-0">
+            <table class="table table-striped table-definition mb-5">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Metal/Stones/Pearls</th>
+                        <th>Provider</th>
+                        <th>Service</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <td>
                             <label class="custom-control custom-checkbox">
@@ -259,22 +231,34 @@
                                 <span class="custom-control-indicator"></span>
                             </label>
                         </td>
-                        <td>John Lilki</td>
-                        <td>September 14, 2013</td>
-                        <td>jhlilk22@yahoo.com</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
                         <td>
-                            <label class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-indicator"></span>
-                            </label>
+                            <select class="form-select">
+                                <option value="" selected>Choose...</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Stones">Stones</option>
+                                <option value="Pearls">Pearls</option>
+                            </select>
                         </td>
-                        <td>John Lilki</td>
-                        <td>September 14, 2013</td>
-                        <td>jhlilk22@yahoo.com</td>
-                        <td>No</td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected>Choose...</option>
+                                <option value="Provider1">Provider1</option>
+                                <option value="Provider2">Provider2</option>
+                                <option value="Provider3">Provider3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-select">
+                                <option value="" selected>Choose...</option>
+                                <option value="Service1">Service1</option>
+                                <option value="Service2">Service2</option>
+                                <option value="Service3">Service3</option>
+                                <option value="Service4">Service4</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" autocomplete="off" class="form-control" id="inputWeight">
+                        </td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -290,12 +274,16 @@
             </table>
         </div>
     </div>
+</div>
     <div class="notes-col-mb-3">
-        <label for="inputNotes" class="form-label"><i class="fa-regular fa-note"></i>Notes</label>
+        <label for="inputNotes" class="form-label"><i class="fa-solid fa-notes"></i>Notes</label>
         <textarea class="form-control" id="inputNotes" rows="13"></textarea>
     </div>
-    <div class="col-12">
+    <div class="col-1">
         <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+    <div class="col-1">
+        <button type="reset" class="btn btn-danger">Cancel</button>
     </div>
 </form>
 </div>

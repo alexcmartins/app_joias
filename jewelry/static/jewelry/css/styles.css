@@ -41,7 +41,6 @@ body {
 
 
 .main-header.container {
-    
     margin: 0 auto;
 }
 
@@ -131,7 +130,7 @@ a:active {
     outline: none;
 }
 
-/*central container settings*/
+/* Central container settings base.html */
 .container {
     font-size: 2.2rem;
     margin-top: 1.5rem;
@@ -176,6 +175,41 @@ a:active {
 }*/
 
 /*Adjustments Jewel */
+.mb-5-jewel {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-central {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-left {
+    display: inline-block;
+}
+
+.content-right {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.carousel-inner > .carousel-item > img {
+    max-width: 640px;
+    max-height: 480px;
+    margin: 10px;
+    
+}
+
+.carousel.slide {
+    max-width: 640px;
+    max-height: 480px;
+    margin: 10px;
+    
+}
+
+
 /*Fixed top table*/
 .table-striped thead th {
     position: sticky;
@@ -248,12 +282,16 @@ thead {
     margin: 0 auto;
 }
 
-/*Table Workshop adjustments*/
+/* Card SettingsJewel */
+.card.mb-5.settings-jewel {
+    max-height: 60rem;
+    overflow-y:scroll;
+    display: flex;
+}
 
-
-/*Table list services newjewelry*/
-
-/* Card ListJewel */
+.row.settings-jewel {
+    justify-content: space-evenly;
+}
 
 
 /* Card NewJewelry */
@@ -262,49 +300,36 @@ thead {
 }
 
 .card.mb-5.jewel{
-    max-height: 48rem;
+    max-height: 70rem;
     overflow-y:scroll;
 }
 
 .card.mb-5.services{
     overflow-y:scroll;
-    max-width: 50%;
+    margin-top: 15px;
 }
 
-.card.mb-5.stone{
+.card.mb-5.stones{
     overflow-y:scroll;
-    max-width: 50%; 
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
-.carousel {
-    max-width: 250px;
-    max-height: 250px;
-    margin: 0 auto;
-    margin-top: 30px;
-    color: #1C646D;
-}
-
-.d-block.w-30 {
-    max-width: 250px;
-    max-height: 250px;
-}
-
-.notes-col-mb-3 {
-    max-width: 50%;
+.card.mb-5.pearls{
+    overflow-y:scroll;
+    margin-top: 15px;
 }
 
 /*Card Home - Dashboard */
 .card.mb-5.home {
     width: 70%;
-    height: 60rem;
+    max-height: 80rem;
     float: left;
 }
 
 /*Card Home - Contacts */
 .card.mb-3 {
     width: 27%;
-    height: 60rem;
+    max-height: 80rem;
     float: right;
     overflow-y: scroll;
 }

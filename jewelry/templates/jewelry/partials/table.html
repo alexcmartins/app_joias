@@ -9,13 +9,11 @@
             Image
         </button>
         </td>
-    <td><a href="#">{{jewel.name}}</a></td>
+    <td><a href=" {% url 'jewelry:jewel' jewel.id %} ">{{jewel.name}}</a></td>
+    <td>{{jewel.category}}</td>
     <td>{{jewel.models}}</td>
     <td>{{jewel.weight|floatformat:"2"}} g</td>
     <td>{{jewel.metal}}</td>
-    <td>{{jewel.stone}}</td>
-    <td>{{jewel.foundry}}</td>
-    <td>{{jewel.workshop}}</td>
     <td>R$ {{jewel.value|floatformat:"2g"}}</td>
     <td>
         <button type="button" class="btn btn_info" data-bs-toggle="popover" data-bs-placement="left"

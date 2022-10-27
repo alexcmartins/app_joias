@@ -2,53 +2,96 @@
 
 {% block content %}
 <div class="container-blank"></div>
-        <div class="container-search-jewel">
-            {% include 'jewelry/partials/search.html' %}                
-        </div>
-        <div class="container-main">
-            <hr>
-            <div class="container-buttons">
-                <a href="/newjewel"><button class="btn btn-functions" arialabel="newjewel"><i class="fa-solid fa-plus"></i>New Jewel</button></a>
-                <a href="/updatejewel"><button class="btn btn-functions" arialabel="updatejewel"><i class="fa-solid fa-rotate-right"></i>Update Jewel</button></a>
-                <a href="#"><button class="btn btn-functions" arialabel="removejewel"><i class="fa-solid fa-trash"></i>Remove Jewel</button></a>
-                <a href="/settingsjewel"><button class="btn btn-functions" arialabel="settingsjewel"><i class="fa-solid fa-gear"></i>Settings Jewel</button></a>
-                <button class="btn btn-functions" arialabel="filterjewel"><i class="fa-solid fa-filter"></i>Filter Jewel</button>
+<div class="card mb-5-jewel">
+    <div class="card-header"><i class="fa-solid fa-ring"></i>Jewel</div>
+    <div class="content-central">
+        <div class="content-left">
+          <div class="row g-3">
+            <div class="col-md-4">
+                <label for="inputProductName" class="form-label">Product Name:</label>
+                <p> {{ jewel.name }} </p>
             </div>
-            <div class="card mb-5 jewel">
-                <div class="card-header"><i class="fa-solid fa-ring"></i>List Jewelry</div>
-            <table id="data_jewel" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>image</th>
-                        <th>Name</th>
-                        <th>Model</th>
-                        <th>Weight</th>
-                        <th>Metal</th>
-                        <th>Stone</th>
-                        <th>Foundry</th>
-                        <th>Workshop</th>
-                        <th>Value</th>
-                        <th>+ Info</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for jewel in jewelry %}
-                    {% include 'jewelry/partials/table.html' %}
-                {% endfor %}
-                </tbody>
-            </table>
+            <div class="col-md-1">
+                <label for="inputProductCode" class="form-label">Code:</label>
+                <p> #{{ jewel.code }} </p>
+            </div>
+            <div class="col-md-2">
+                <label for="inputCategory" class="form-label">Category:</label>
+                <p> {{ jewel.category }} </p>
+            </div>
+            <div class="col-md-1">
+                <label for="inputModel" class="form-label">Model:</label>
+                <p> {{ jewel.models }} </p>
+            </div>
+            <div class="col-md-1">
+                <label for="inputGenre" class="form-label">Genre:</label>
+                <p> {{ jewel.genre }} </p>
+            </div>
+            <div class="col-md-1">
+                <label for="inputWeight" class="form-label">Weight:</label>
+                <p> {{ jewel.weight }} gr</p>
+            </div>
+            <div class="col-md-1">
+                <label for="inputLength" class="form-label">Length:</label>
+                <p> {{ jewel.length }} mm</p>
+            </div>
+            <div class="col-md-1">
+                <label for="inputWidth" class="form-label">Width</label>
+                <p> {{ jewel.width }} mm</p>
+            </div>
+            <div class="col-md-1">
+                <label for="inputHeight" class="form-label">Height</label>
+                <p> {{ jewel.height }} mm</p>
+            </div>
+            <div class="col-md-2">
+                <label for="inputThickness" class="form-label">Thickness</label>
+                <p> {{ jewel.thickness }} mm</p>
+            </div>
+            <div class="col-md-1">
+                <label for="inputMetal" class="form-label">Metal</label>
+                <p> {{ jewel.metal }} </p>
+            </div>
+            <div class="col-sm-1">
+              <label for="inputCategory" class="form-label">Category</label>
+              <select id="inputCategory" class="form-select">
+                  <option value="{{ jewel.category }}" selected>{{ jewel.category }}</option>
+                  <option value="Ring">Ring</option>
+                  <option value="Earring">Earring</option>
+                  <option value="Necklace">Necklace</option>
+                  <option value="Bracelet">Bracelet</option>
+                  <option value="Alliance">Alliance</option>
+                  <option value="1/2_Alliance">1/2 Alliance</option>
+              </select>
+          </div>
         </div>
         </div>
-
-    <!-- JavaScript for popover -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-            var popoverList = popoverTriggerList.map(function (element) {
-                return new bootstrap.Popover(element);
-            });
-        });    
-    </script>
-
-{% endblock content %}
+        <div class="content-right">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://picsum.photos/1920/1080" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/1920/1080" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/1920/1080" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>  
+    </div>
+</div>
+{% endblock %}
