@@ -1,6 +1,7 @@
-<div class="card mb-5">
+<div class="card mb-5 newjewel">
     <div class="card-header"><i class="fa-solid fa-ring"></i>New Jewel</div>
-<form class="row g-3">
+    <div class="container-dad">
+    <form class="row g-3">
     <div class="col-md-4">
         <label for="inputProductName" class="form-label">Product Name</label>
         <input type="text" class="form-control" id="inputProductName">
@@ -240,24 +241,13 @@
                             </select>
                         </td>
                         <td>
-                            <select class="form-select">
-                                <option value="" selected>Choose...</option>
-                                <option value="Provider1">Provider1</option>
-                                <option value="Provider2">Provider2</option>
-                                <option value="Provider3">Provider3</option>
-                            </select>
+                            <input type="text" autocomplete="off" class="form-control" id="inputProvider">
                         </td>
                         <td>
-                            <select class="form-select">
-                                <option value="" selected>Choose...</option>
-                                <option value="Service1">Service1</option>
-                                <option value="Service2">Service2</option>
-                                <option value="Service3">Service3</option>
-                                <option value="Service4">Service4</option>
-                            </select>
+                            <input type="text" autocomplete="off" class="form-control" id="inputService">
                         </td>
                         <td>
-                            <input type="text" autocomplete="off" class="form-control" id="inputWeight">
+                            <input type="text" autocomplete="off" class="form-control" id="inputValue">
                         </td>
                     </tr>
                 </tbody>
@@ -275,7 +265,7 @@
         </div>
     </div>
 </div>
-    <div class="notes-col-mb-3">
+    <div class="col-md-12">
         <label for="inputNotes" class="form-label"><i class="fa-solid fa-notes"></i>Notes</label>
         <textarea class="form-control" id="inputNotes" rows="13"></textarea>
     </div>
@@ -286,4 +276,5 @@
         <button type="reset" class="btn btn-danger">Cancel</button>
     </div>
 </form>
+</div>
 </div>

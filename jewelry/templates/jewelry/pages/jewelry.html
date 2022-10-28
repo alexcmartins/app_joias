@@ -9,25 +9,23 @@
             <hr>
             <div class="container-buttons">
                 <a href=" {% url 'jewelry:new' %} "><button class="btn btn-functions" arialabel="newjewel"><i class="fa-solid fa-plus"></i>New Jewel</button></a>
-                <a href="/updatejewel"><button class="btn btn-functions" arialabel="updatejewel"><i class="fa-solid fa-rotate-right"></i>Update Jewel</button></a>
-                <a href="#"><button class="btn btn-functions" arialabel="removejewel"><i class="fa-solid fa-trash"></i>Remove Jewel</button></a>
                 <a href=" {% url 'jewelry:settings' %} "><button class="btn btn-functions" arialabel="settingsjewel"><i class="fa-solid fa-gear"></i>Settings Jewel</button></a>
                 <button class="btn btn-functions" arialabel="filterjewel"><i class="fa-solid fa-filter"></i>Filter Jewel</button>
             </div>
             <div class="card mb-5 jewel">
                 <div class="card-header"><i class="fa-solid fa-ring"></i>List Jewelry</div>
-            <table id="data_jewel" class="table table-striped">
+                <div class="container-dad">
+                <table id="data_jewel" class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th>image</th>
+                        <th>Image</th>
                         <th>Name</th>
                         <th>Category</th>
                         <th>Model</th>
                         <th>Weight</th>
                         <th>Metal</th>
                         <th>Value</th>
-                        <th>+ Info</th>
+                        <th>+Info</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,6 +34,7 @@
                 {% endfor %}
                 </tbody>
             </table>
+        </div>
         </div>
         </div>
 

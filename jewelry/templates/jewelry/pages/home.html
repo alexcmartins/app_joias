@@ -5,10 +5,13 @@
 <div class="container-main">
     <div class="card mb-5 home">
         <div class="card-header"><i class="fa-solid fa-chart-network"></i>Dashboard</div>
+        <div class="container-dad">
         <span>teste t </span>
+    </div>
     </div>
     <div class="card mb-3">
         <div class="card-header"><i class="fa-solid fa-circle-user"></i>Contact <a href=" {% url 'jewelry:newcontact' %} "><button class="btn btn-functions" arialabel="newcontact"><i class="fa-solid fa-plus"></i>New Contact</button></a></div>
+        <div class="container-dad">
         <div class="container-search-home">
             {% include 'jewelry/partials/search.html' %} 
         </div>      
@@ -16,6 +19,7 @@
                 {% include 'jewelry/partials/cardcontact.html' %}
             {% endfor %}
         </div>
-
+        </div>
+    
 </div>
 {% endblock content %}

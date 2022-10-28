@@ -19,6 +19,7 @@ def generator_jewel():
         'metal': fake.word(),
         'stones': {
             'types': "Diamond",
+            'origin': "Japanese",
             'amount': fake.random_number(digits=2, fix_len=True),
             'size': "0.03",
             'carat': "0.08",
