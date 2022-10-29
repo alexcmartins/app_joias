@@ -1,0 +1,65 @@
+<hr>
+            <div class="container-buttons">
+                <a href="#"><button class="btn btn-functions" arialabel="updatecontact"><i class="fa-solid fa-rotate-right"></i>Update Contact</button></a>
+                <a href="#"><button class="btn btn-functions" arialabel="removecontact"><i class="fa-solid fa-trash"></i>Remove Contact</button></a>
+            </div>
+            <div class="card mb-5-contact">
+                <div class="card-header"><i class="fa-solid fa-ring"></i>Contact</div>
+                <div class="container-dad">
+                <div class="content-central">
+                  <div class="content-left">
+                    <div class="row g-3">
+                      <div class="col-md-3">
+                        <label for="inputFirstName" class="form-label">First Name</label>
+                        <p class="form-p"> {{ contact.name }} </p>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="inputLastName" class="form-label">Last Name</label>
+                        <p class="form-p"> {{ contact.lastName }} </p>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="inputEmail" class="form-label">E-mail</label>
+                        <p class="form-p"> {{ contact.email }} </p>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="inputCompany" class="form-label">Company</label>
+                        <p class="form-p"> {{ contact.company }} </p>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="inputDate" class="form-label">Birthday</label>
+                        <p class="form-p"> {{ contact.birthday }} </p>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="inputInstagram" class="form-label">Instagram</label>
+                        <p class="form-p">@{{ contact.instagram }} </p>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="inputWhatsapp" class="form-label">Whatsapp</label>
+                        <p class="form-p"> {{ contact.mobile }} </p>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="inputMobile" class="form-label">Mobile</label>
+                        <p class="form-p"> {{ contact.mobile }} </p>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="inputHouseOffice" class="form-label">House/Office</label>
+                        <p class="form-p"> {{ contact.houseoffice }} </p>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="inputAddress" class="form-label">Address</label>
+                        <p class="form-p"> {{ contact.address }} </p>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="inputNotes" class="form-label">Notes</label>
+                        <p class="form-p"> {{ contact.note }} </p>
+                      </div>
+                    </div>
+                </div>
+                    <div class="content-right">
+                        <figure class="figure-img">
+                            <img src="https://picsum.photos/1920/1080" alt="Minha Figura">
+                        </figure>
+                    </div> 
+            </div>  
+        </div>        
+    </div>  

@@ -9,9 +9,9 @@ def home(request):
     })
 
 
-def contact(request):
+def contact(request, id):
     return render(request, 'jewelry/pages/contact.html', context={
-        'contacts': [generator_contact() for _ in range(25)],
+        'contact': generator_contact(),
     })
 
 

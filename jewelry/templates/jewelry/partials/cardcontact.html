@@ -9,12 +9,12 @@
 
                     <aside>
                         <h1 class="h1-aside"><i class="fa-solid fa-circle-user"></i>{{contact.name}}</h1>
-                        <p class="p-aside"><i class="fa-solid fa-phone"></i>+55 {{contact.phone}}</p>
+                        <p class="p-aside"><i class="fa-solid fa-phone"></i>+55 {{contact.mobile}}</p>
                         <p class="p-aside"><i class="fa-solid fa-envelope"></i>{{contact.email}}</p>
                     </aside>
                 </div>
                 <div class="content-btn">
-                    <button class="btn btn-details" href="#">Details...</button>
+                    <a href=" {% url 'jewelry:contact' contact.id %} " class="btn btn-details">Details</a>
                 </div>
             </section>
         </main>

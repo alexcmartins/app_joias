@@ -7,6 +7,7 @@ app_name = 'jewelry'
 urlpatterns = [
     path('', views.home, name="home"),
     path('contacts/new/', views.newcontact, name="newcontact"),
+    path('contacts/<int:id>/', views.contact, name="contact"),
     path('updatecontact/', views.updatecontact),
     path('login/', views.login, name="login"),
     path('jewelry/', views.jewelry, name="jewelry"),

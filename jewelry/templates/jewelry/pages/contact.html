@@ -1,14 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container-blank"></div>
 <div class="container-main">
-    <hr>
-            <div class="container-buttons">
-                <a href="/newcontact"><button class="btn btn-functions" arialabel="newcontact"><i class="fa-solid fa-plus"></i>New Contact</button></a>
-                <a href="/updatecontact"><button class="btn btn-functions" arialabel="updatecontact"><i class="fa-solid fa-rotate-right"></i>Update Contact</button></a>
-                <a href="#"><button class="btn btn-functions" arialabel="removecontact"><i class="fa-solid fa-trash"></i>Remove Contact</button></a>
-                <button class="btn btn-functions" arialabel="filtercontact"><i class="fa-solid fa-filter"></i>Filter Contact</button>
-            </div>
-     
+    {% include 'jewelry/partials/detailscontact.html' %}   
 </div>
 {% endblock content %}

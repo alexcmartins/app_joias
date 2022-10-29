@@ -219,11 +219,14 @@ a:active {
     margin-left: 10px;
 }
 
+.content-carousel {
+    width: 600px;
+}
+
 .carousel-inner > .carousel-item > img {
     max-width: 640px;
     max-height: 480px;
     margin: 10px;
-    
 }
 
 .carousel.slide {
@@ -371,14 +374,52 @@ thead {
     overflow: auto;
 }
 
-/*Card Home - Dashboard */
+/* Login */
+.container-content {
+    background: var(--primary-color-background);
+    width: 50rem;
+    height: 30rem;
+    margin: 200px auto;
+    border-radius: 3%;
+}
+
+.row.g-3.login {
+    margin: 15px 35px;
+    max-width: 200px;
+}
+
+.content-left-block {
+    margin: 90px auto;
+    width: 190px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.line-central {
+    border: none;
+    border-left: 1.5px solid hsla(200, 10%, 50%,100);
+    height: 40vh;
+    width: 1px;
+}
+
+.text-login {
+    font-size: 2rem;
+}
+
+.content-p {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Card Home - Dashboard */
 .card.mb-5.home {
     width: 70%;
     max-height: 80rem;
     float: left;
 }
 
-/*Card Home - Contacts */
+/* Card Home - Contacts */
 .card.mb-3 {
     width: 27%;
     max-height: 80rem;
@@ -440,7 +481,6 @@ aside {
     margin-top: 5px;
 }
 
-
 .h1-aside {
     font-weight: 100;
     font-size: 17px;
@@ -465,4 +505,16 @@ aside {
     width: 35%;
     background-color: var(--primary-color-light-purple);
     border-radius: 3%;
+}
+
+/* Contact view */
+.mb-5-contact {
+    max-height: 70rem;
+}
+
+.figure-img > img {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    margin: 10px;
 }

@@ -1,5 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <span>Login</span>
+<div class="container-blank"></div>
+<div class="container-main">
+    <div class="container-content">
+        <div class="content-central">
+            <div class="content-left">
+                <div class="content-left-block">
+                    <i class="fa-solid fa-cloud fa-5x"></i>
+                    <p class="text-login" >Jewelry System</p>
+                </div>
+            </div>
+            <hr class="line-central">
+            <div class="content-right">
+                <form class="row g-3 login">
+                    <div class="col-md-12">
+                        <label for="inputNameLogin" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="inputNameLogin">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="inputPasswordLogin" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="inputPasswordLogin">
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="reset" class="btn btn-danger">Cancel</button>
+                    </div>
+                </form>
+                <div class="content-p">
+                <p>Forgot your password <a href="#">Click here</a></p>
+                <p>To register <a href="#">Click here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

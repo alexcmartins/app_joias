@@ -50,10 +50,17 @@ def generator_jewel():
 
 def generator_contact():
     return {
+        'id': fake.random_number(digits=2, fix_len=True),
         'name': fake.name(),
-        'phone': fake.random_number(digits=11),
+        'lastName': fake.word(),
+        'instagram': fake.word(),
+        'mobile': fake.random_number(digits=11),
+        'houseoffice': fake.random_number(digits=11),
         'company': fake.company(),
-        'email': fake.email()
+        'birthday': fake.date(),
+        'address': fake.address(),
+        'email': fake.email(),
+        'note': fake.text(600)
     }
 
 
@@ -62,3 +69,8 @@ def generator_contact():
 if __name__ == '__main__':
     from pprint import pprint
     pprint(generator_jewel())
+
+
+if __name__ == '__main__':
+    from pprint import pprint
+    pprint(generator_contact())
