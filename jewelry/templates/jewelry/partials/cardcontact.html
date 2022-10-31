@@ -4,11 +4,11 @@
             <section>
                 <div class="content">
                     <img class="img-content"
-                        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256492/_mLIxaKY_400x400.jpg"
+                        src=" {{ contact.image_contact }} "
                         alt="Profile Image">
 
                     <aside>
-                        <h1 class="h1-aside"><i class="fa-solid fa-circle-user"></i>{{contact.name}}</h1>
+                        <h1 class="h1-aside"><i class="fa-solid fa-circle-user"></i>{{contact.first_name}}</h1>
                         <p class="p-aside"><i class="fa-solid fa-phone"></i>+55 {{contact.mobile}}</p>
                         <p class="p-aside"><i class="fa-solid fa-envelope"></i>{{contact.email}}</p>
                     </aside>

@@ -11,11 +11,11 @@
                     <div class="row g-3">
                       <div class="col-md-3">
                         <label for="inputFirstName" class="form-label">First Name</label>
-                        <p class="form-p"> {{ contact.name }} </p>
+                        <p class="form-p"> {{ contact.first_name }} </p>
                       </div>
                       <div class="col-md-2">
                         <label for="inputLastName" class="form-label">Last Name</label>
-                        <p class="form-p"> {{ contact.lastName }} </p>
+                        <p class="form-p"> {{ contact.last_name }} </p>
                       </div>
                       <div class="col-md-3">
                         <label for="inputEmail" class="form-label">E-mail</label>
@@ -39,7 +39,7 @@
                       </div>
                       <div class="col-md-2">
                         <label for="inputHouseOffice" class="form-label">House/Office</label>
-                        <p class="form-p"> {{ contact.houseoffice }} </p>
+                        <p class="form-p"> {{ contact.house_office }} </p>
                       </div>
                       <div class="col-md-4">
                         <label for="inputAddress" class="form-label">Address</label>
@@ -47,14 +47,14 @@
                       </div>
                       <div class="col-md-12">
                         <label for="inputNotes" class="form-label">Notes</label>
-                        <p class="form-p"> {{ contact.note }} </p>
+                        <p class="form-p"> {{ contact.notes }} </p>
                       </div>
                     </div>
                 </div>
                     <div class="content-right">
-                        <figure class="figure-img">
-                            <img src="https://picsum.photos/1920/1080" alt="Minha Figura">
-                        </figure>
+                        <div class="figure-img">
+                            <img src=" {{ contact.image_contact }} " alt="Minha Figura">
+                        </div>
                     </div> 
             </div>  
         </div>        

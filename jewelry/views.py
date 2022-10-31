@@ -1,17 +1,21 @@
 from data import generator_contact, generator_jewel
 from django.shortcuts import render
 
+from .models import Contacts
+
 
 # Create your views here.
 def home(request):
+    contacts = Contacts.objects.all().order_by('-id')
     return render(request, 'jewelry/pages/home.html', context={
-        'contacts': [generator_contact() for _ in range(25)],
+        'contacts': contacts,
     })
 
 
 def contact(request, id):
+    contact = Contacts.objects.filter(id=id).order_by('-id').first()
     return render(request, 'jewelry/pages/contact.html', context={
-        'contact': generator_contact(),
+        'contact': contact,
     })
 
 
