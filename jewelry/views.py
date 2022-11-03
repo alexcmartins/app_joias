@@ -1,14 +1,27 @@
-from data import generator_contact, generator_jewel
+from django.db.models import Q
 from django.shortcuts import render
+
+from data import generator_jewel
 
 from .models import Contacts
 
 
 # Create your views here.
 def home(request):
+    search_term = request.GET.get('search', '')
+    print(search_term)
+    contacts_filters = Contacts.objects.filter(
+        Q(first_name__icontains=search_term) |
+        Q(last_name__icontains=search_term),
+    ).order_by('-id')
+    print(contacts_filters)
     contacts = Contacts.objects.all().order_by('-id')
+
     return render(request, 'jewelry/pages/home.html', context={
+        # 'first_name': f'Search for"{search_term}" |',
+        'search_term': search_term,
         'contacts': contacts,
+        'contacts_filters': contacts_filters,
     })
 
 

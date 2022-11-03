@@ -447,7 +447,7 @@ thead {
     
 main {
     float: left;
-    /*width: 100%;*/
+    width: 100%;
     position: relative;
 }
       
@@ -465,6 +465,7 @@ section {
     position: relative;
     text-align: center;
     display: flex;
+    flex-direction: column;
 }
 
 .img-content {

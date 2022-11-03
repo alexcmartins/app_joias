@@ -12,7 +12,7 @@ class Contacts(models.Model):
     whatsapp = models.BooleanField(default=False)
     mobile = models.CharField(max_length=16, null=False, blank=False)
     house_office = models.CharField(max_length=16)
-    image_contact = models.ImageField(upload_to='media/images/%Y/%m/%d/')
+    image_contact = models.ImageField(upload_to='images/%Y/%m/%d/')
     address = models.CharField(max_length=128, null=False, blank=False)
     notes = models.TextField()
 

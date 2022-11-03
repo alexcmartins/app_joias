@@ -27,7 +27,7 @@
                       </div>
                       <div class="col-md-2">
                         <label for="inputDate" class="form-label">Birthday</label>
-                        <p class="form-p"> {{ contact.birthday }} </p>
+                        <p class="form-p"> {{ contact.birthday|date }} </p>
                       </div>
                       <div class="col-md-2">
                         <label for="inputInstagram" class="form-label">Instagram</label>
@@ -35,7 +35,7 @@
                       </div>
                       <div class="col-md-3">
                         <label for="inputMobile" class="form-label">Mobile</label>
-                        <p class="form-p"> {{ contact.mobile }} <input type="checkbox" id="whatsapp" name="whatsapp" value="True"> Whatsapp </p>
+                        <p class="form-p"> {{ contact.mobile }} <input type="checkbox" id="whatsapp" name="whatsapp" value="{{ contact.whatsapp }}"> Whatsapp </p>
                       </div>
                       <div class="col-md-2">
                         <label for="inputHouseOffice" class="form-label">House/Office</label>
@@ -51,11 +51,13 @@
                       </div>
                     </div>
                 </div>
+                {% if contact.image_contact %}
                     <div class="content-right">
                         <div class="figure-img">
-                            <img src=" {{ contact.image_contact }} " alt="Minha Figura">
+                            <img src=" {{ contact.image_contact.url }} " alt="Minha Figura">
                         </div>
                     </div> 
+                {% endif %}
             </div>  
         </div>        
     </div>  
