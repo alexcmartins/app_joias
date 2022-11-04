@@ -30,10 +30,10 @@ class CategoryJewelry(models.Model):
 class ModelsJewelry(models.Model):
     category = models.ForeignKey(
         CategoryJewelry, on_delete=models.SET_NULL, null=True)
-    model = models.CharField(max_length=32, null=False, blank=False)
+    name = models.CharField(max_length=32, null=False, blank=False)
 
     def __str__(self):
-        return self.model
+        return self.name
 
 
 class TypesMetals(models.Model):
@@ -103,7 +103,7 @@ class Services(models.Model):
     jewelry_id = models.ManyToManyField(Jewelry)
 
     def __str__(self):
-        return self.service
+        return "%s %s" % (self.service, self.jewelry_id)
 
 
 class Pearls(models.Model):
@@ -116,6 +116,9 @@ class Pearls(models.Model):
     value = models.FloatField(null=False, blank=False)
     jewelry_id = models.ManyToManyField(Jewelry)
 
+    def __str__(self):
+        return "%s %s" % (self.pearl, self.jewelry_id)
+
 
 class Stones(models.Model):
     stone = models.ForeignKey(
@@ -126,3 +129,6 @@ class Stones(models.Model):
     carat = models.FloatField(null=False, blank=False)
     value = models.FloatField(null=False, blank=False)
     jewelry_id = models.ManyToManyField(Jewelry)
+
+    def __str__(self):
+        return "%s %s" % (self.stone, self.jewelry_id)

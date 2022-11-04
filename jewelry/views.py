@@ -1,5 +1,5 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from data import generator_jewel
 
@@ -32,8 +32,41 @@ def contact(request, id):
     })
 
 
-def newcontact(request):
+def new_contact(request):
     return render(request, 'jewelry/pages/newcontact.html')
+
+
+def new_contact_save(request):
+    if request.method == "POST":
+        first_name = request.POST.get("inputFirstName")
+        last_name = request.POST.get("inputFirstName")
+        email = request.POST.get("inputFirstName")
+        company = request.POST.get("inputFirstName")
+        birthday = request.POST.get("inputFirstName")
+        instagram = request.POST.get("inputFirstName")
+        whatsapp = request.POST.get("inputFirstName")
+        mobile = request.POST.get("inputFirstName")
+        house_office = request.POST.get("inputFirstName")
+        image_contact = request.POST.get("inputFirstName")
+        address = request.POST.get("inputFirstName")
+        notes = request.POST.get("inputFirstName")
+
+        Contacts(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            company=company,
+            birthday=birthday,
+            instagram=instagram,
+            whatsapp=whatsapp,
+            mobile=mobile,
+            house_office=house_office,
+            image_contact=image_contact,
+            address=address,
+            notes=notes,
+        ).save()
+
+    return redirect('jewelry/pages/home.html')
 
 
 def updatecontact(request):
