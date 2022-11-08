@@ -31,11 +31,13 @@
                       </div>
                       <div class="col-md-2">
                         <label for="inputInstagram" class="form-label">Instagram</label>
+                        {% if contact.instagram %}
                         <p class="form-p">@{{ contact.instagram }} </p>
+                        {% endif %}
                       </div>
                       <div class="col-md-3">
                         <label for="inputMobile" class="form-label">Mobile</label>
-                        <p class="form-p"> {{ contact.mobile }} <input type="checkbox" id="whatsapp" name="whatsapp" value="{{ contact.whatsapp }}"> Whatsapp </p>
+                        <p class="form-p"> {{ contact.mobile }} <input type="checkbox" name="whatsapp" {% if contact.whatsapp == 1 %} checked="checked" {% endif %} value="{{ contact.whatsapp }}"> Whatsapp </p>
                       </div>
                       <div class="col-md-2">
                         <label for="inputHouseOffice" class="form-label">House/Office</label>

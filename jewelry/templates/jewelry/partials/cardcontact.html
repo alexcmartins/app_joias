@@ -3,10 +3,11 @@
         <main>
             <section>
                 <div class="content">
+                    {% if contact.image_contact %}
                     <img class="img-content"
                         src=" {{ contact.image_contact.url }} "
                         alt="Profile Image">
-
+                        {% endif %}
                     <aside>
                         <h1 class="h1-aside"><i class="fa-solid fa-circle-user"></i>{{contact.first_name}} {{contact.last_name}}</h1>
                         <p class="p-aside"><i class="fa-solid fa-phone"></i>+55 {{contact.mobile}}</p>

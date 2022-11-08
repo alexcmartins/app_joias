@@ -6,15 +6,15 @@ class Contacts(models.Model):
     first_name = models.CharField(max_length=32, null=False, blank=False)
     last_name = models.CharField(max_length=32, null=False, blank=False)
     email = models.EmailField()
-    company = models.CharField(max_length=64, null=False, blank=False)
+    company = models.CharField(max_length=64, blank=True)
     birthday = models.DateField()
-    instagram = models.CharField(max_length=32, null=False, blank=False)
+    instagram = models.CharField(max_length=32, blank=True)
     whatsapp = models.BooleanField(default=False)
     mobile = models.CharField(max_length=16, null=False, blank=False)
-    house_office = models.CharField(max_length=16)
+    house_office = models.CharField(max_length=16, blank=True)
     image_contact = models.ImageField(upload_to='images/%Y/%m/%d/')
-    address = models.CharField(max_length=128, null=False, blank=False)
-    notes = models.TextField()
+    address = models.CharField(max_length=128, blank=True)
+    notes = models.TextField(blank=True)
 
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
@@ -58,8 +58,8 @@ class TypesPearls(models.Model):
 
 
 class Indicators(models.Model):
-    fine_gold = models.FloatField(null=False, blank=False)
-    parallel_dollar = models.FloatField(null=False, blank=False)
+    fine_gold = models.FloatField(blank=True)
+    parallel_dollar = models.FloatField(blank=True)
 
 
 class Jewelry(models.Model):
@@ -82,7 +82,7 @@ class Jewelry(models.Model):
     thickness = models.FloatField(null=False, blank=False)
     metal = models.ForeignKey(
         TypesMetals, on_delete=models.SET_NULL, null=True)
-    image_jewel = models.ImageField(upload_to='jewelry/images/%Y/%m/%d/')
+    image_jewel = models.ImageField(upload_to='images/%Y/%m/%d/')
     note = models.TextField()
 
     def __str__(self):

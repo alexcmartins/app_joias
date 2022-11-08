@@ -1,8 +1,10 @@
 from django.db.models import Q
-from django.shortcuts import redirect, render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
 
 from data import generator_jewel
 
+from .forms import NewContactForm
 from .models import Contacts
 
 
@@ -32,24 +34,43 @@ def contact(request, id):
     })
 
 
+# def new_contact(request):
+#   return render(request, 'jewelry/pages/newcontact.html')
+
+# Create new contact
 def new_contact(request):
-    return render(request, 'jewelry/pages/newcontact.html')
-
-
-def new_contact_save(request):
+    submitted = False
     if request.method == "POST":
+        form = NewContactForm(request.POST, request.FILES)
+        if form.is_valid():
+            contact = form.save()
+            contact.save()
+            return HttpResponseRedirect('/contacts/new?submitted=True')
+    else:
+        form = NewContactForm
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'jewelry/pages/newcontact.html', context={
+        'form': form,
+        'submitted': submitted,
+    })
+
+    """if request.method == "POST":
         first_name = request.POST.get("inputFirstName")
-        last_name = request.POST.get("inputFirstName")
-        email = request.POST.get("inputFirstName")
-        company = request.POST.get("inputFirstName")
-        birthday = request.POST.get("inputFirstName")
-        instagram = request.POST.get("inputFirstName")
-        whatsapp = request.POST.get("inputFirstName")
-        mobile = request.POST.get("inputFirstName")
-        house_office = request.POST.get("inputFirstName")
-        image_contact = request.POST.get("inputFirstName")
-        address = request.POST.get("inputFirstName")
-        notes = request.POST.get("inputFirstName")
+        last_name = request.POST.get("inputLastName")
+        email = request.POST.get("inputEmail")
+        company = request.POST.get("inputCompany")
+        birthday = request.POST.get("inputDate")
+        instagram = request.POST.get("inputInstagram")
+        whatsapp = request.POST.get("checkboxWhatsapp")
+        mobile = request.POST.get("inputMobile")
+        house_office = request.POST.get("inputHouseOffice")
+        image_contact = request.POST.get("inputImage")
+        address = request.POST.get("inputAddress")
+        notes = request.POST.get("inputNotes")
+
+        print(new_contact)
 
         Contacts(
             first_name=first_name,
@@ -65,8 +86,11 @@ def new_contact_save(request):
             address=address,
             notes=notes,
         ).save()
+        print(Contacts)
 
-    return redirect('jewelry/pages/home.html')
+        return HttpResponseRedirect('/')
+    else:
+        return render(request, 'jewelry/pages/newcontact.html')"""
 
 
 def updatecontact(request):
