@@ -37,7 +37,7 @@
                       </div>
                       <div class="col-md-3">
                         <label for="inputMobile" class="form-label">Mobile</label>
-                        <p class="form-p"> {{ contact.mobile }} <input type="checkbox" name="whatsapp" {% if contact.whatsapp == 1 %} checked="checked" {% endif %} value="{{ contact.whatsapp }}"> Whatsapp </p>
+                        <p class="form-p"> {{ contact.mobile }} <input type="checkbox" name="whatsapp" {% if contact.whatsapp == 1 %} checked="checked" {% endif %} value="{{ contact.whatsapp }}" disabled> Whatsapp </p>
                       </div>
                       <div class="col-md-2">
                         <label for="inputHouseOffice" class="form-label">House/Office</label>

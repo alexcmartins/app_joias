@@ -5,8 +5,12 @@
 <div class="container-main">
 {% if submitted %}
     Contact registered successfully!
+    <br>
+    <a href="{% url 'jewelry:home' %}"><i
+        class="fa-solid fa-house"></i>Home</a>
+     
 {% else %}
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
         <input type="submit" value="Save">
