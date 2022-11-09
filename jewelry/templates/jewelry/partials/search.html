@@ -1,6 +1,5 @@
 <div class="container-filter">
     <form action="" method="GET" class="search-form">
-        {% csrf_token %}
         <input class="search-input" type="search" name="search" value="{{ search_term }}" placeholder="Enter your search here!" autocomplete="off" aria-label="Search">
     <button class="search-button" type="submit" ><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
