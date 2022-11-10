@@ -12,6 +12,8 @@ urlpatterns = [
     path('contacts/<int:id>', views.contact, name="contact"),
     path('contacts/update/<int:id>', views.update_contact,
          name="update-contact"),
+    path('contacts/delete/<int:id>', views.delete_contact,
+         name="delete-contact"),
     path('jewelry/new', views.new_jewel, name="new-jewel"),
     path('jewelry/<int:id>', views.jewel, name="jewel"),
     path('jewelry/update/<int:id>', views.update_jewel, name="update-jewel"),

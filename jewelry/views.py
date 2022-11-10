@@ -86,6 +86,14 @@ def update_contact(request, id):
         })
 
 
+# Delete Contact
+def delete_contact(request, id):
+    contact = Contacts.objects.get(id=id)
+    contact.delete()
+
+    return redirect('/')
+
+
 # Login
 def login(request):
     return render(request, 'jewelry/pages/login.html')
