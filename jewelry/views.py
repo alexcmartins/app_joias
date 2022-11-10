@@ -1,10 +1,10 @@
 from django.db.models import Q
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from data import generator_jewel
 
-from .forms import NewContactForm
+from .forms import ContactForm
 from .models import Contacts
 
 
@@ -16,7 +16,8 @@ def home(request):
             print(search_term)
             contacts_filters = Contacts.objects.filter(
                 Q(first_name__icontains=search_term) |
-                Q(last_name__icontains=search_term),
+                Q(last_name__icontains=search_term) |
+                Q(notes__icontains=search_term),
             ).order_by('-id')
             print(contacts_filters)
 
@@ -44,13 +45,13 @@ def contact(request, id):
 def new_contact(request):
     submitted = False
     if request.method == "POST":
-        form = NewContactForm(request.POST, request.FILES)
+        form = ContactForm(request.POST, request.FILES)
         if form.is_valid():
             contact = form.save()
             contact.save()
             return HttpResponseRedirect('/contacts/new?submitted=True')
     else:
-        form = NewContactForm
+        form = ContactForm
         if 'submitted' in request.GET:
             submitted = True
 
@@ -62,10 +63,27 @@ def new_contact(request):
 
 # Update contact
 def update_contact(request, id):
-    contact = Contacts.objects.filter(id=id).order_by('-id').first()
-    return render(request, 'jewelry/pages/update_contact.html', context={
-        'contact': contact,
-    })
+    contact = Contacts.objects.get(id=id)
+    if request.method == "GET":
+        form = ContactForm(
+            request.GET or None, instance=contact)
+
+        return render(request, 'jewelry/pages/update_contact.html', context={
+            'contact': contact,
+            'form': form,
+        })
+
+    else:
+        form = ContactForm(
+            request.POST, request.FILES or None, instance=contact)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+
+        return render(request, 'jewelry/pages/update_contact.html', context={
+            'contact': contact,
+            'form': form,
+        })
 
 
 # Login

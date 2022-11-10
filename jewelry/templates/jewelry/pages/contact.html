@@ -3,6 +3,11 @@
 {% block content %}
 <div class="container-blank"></div>
 <div class="container-main">
+    <hr>
+        <div class="container-buttons">
+            <a href=" {% url 'jewelry:update-contact' contact.id %} " class="btn btn-functions" arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update Jewel</a>
+            <a href="#" class="btn btn-functions" arialabel="remove-contact"><i class="fa-solid fa-trash"></i>Remove Jewel</a>
+        </div>
     {% include 'jewelry/partials/details_contact.html' %}   
 </div>
 {% endblock content %}

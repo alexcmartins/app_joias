@@ -2,13 +2,14 @@
 
 {% block content %}
 <div class="container-main">
-    <hr>
-    <div class="container-buttons">
-        <a href="/newcontact"><button class="btn btn-functions" arialabel="newcontact"><i class="fa-solid fa-plus"></i>New Contact</button></a>
-        <a href="/updatecontact"><button class="btn btn-functions" arialabel="updatecontact"><i class="fa-solid fa-rotate-right"></i>Update Contact</button></a>
-        <a href="#"><button class="btn btn-functions" arialabel="removecontact"><i class="fa-solid fa-trash"></i>Remove Contact</button></a>
-        <button class="btn btn-functions" arialabel="filtercontact"><i class="fa-solid fa-filter"></i>Filter Contact</button>
-    </div>
-    {% include 'jewelry/partials/formcontact.html' %}  
+<div class="container-main">
+    <p>Contact updated successfully!</p>
+    <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <input type="submit" value="Save">
+    
+    </form>  
+</div>
 </div>
 {% endblock content %}
