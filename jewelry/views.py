@@ -4,8 +4,7 @@ from django.shortcuts import redirect, render
 
 from data import generator_jewel
 
-from .forms import ContactForm
-from .models import Contacts
+from . import forms, models
 
 
 # Home - List all contacts and search
@@ -14,7 +13,7 @@ def home(request):
         search_term = request.GET.get('search', '')
         if search_term != '':
             print(search_term)
-            contacts_filters = Contacts.objects.filter(
+            contacts_filters = models.Contacts.objects.filter(
                 Q(first_name__icontains=search_term) |
                 Q(last_name__icontains=search_term) |
                 Q(notes__icontains=search_term),
@@ -27,7 +26,7 @@ def home(request):
                 'contacts_filters': contacts_filters,
             })
         else:
-            contacts = Contacts.objects.all().order_by('-id')
+            contacts = models.Contacts.objects.all().order_by('-id')
             return render(request, 'jewelry/pages/home.html', context={
                 'contacts': contacts,
             })
@@ -35,7 +34,7 @@ def home(request):
 
 # View contact
 def contact(request, id):
-    contact = Contacts.objects.filter(id=id).order_by('-id').first()
+    contact = models.Contacts.objects.filter(id=id).order_by('-id').first()
     return render(request, 'jewelry/pages/contact.html', context={
         'contact': contact,
     })
@@ -45,13 +44,13 @@ def contact(request, id):
 def new_contact(request):
     submitted = False
     if request.method == "POST":
-        form = ContactForm(request.POST, request.FILES)
+        form = forms.ContactForm(request.POST, request.FILES)
         if form.is_valid():
             contact = form.save()
             contact.save()
             return HttpResponseRedirect('/contacts/new?submitted=True')
     else:
-        form = ContactForm
+        form = forms.ContactForm
         if 'submitted' in request.GET:
             submitted = True
 
@@ -63,9 +62,9 @@ def new_contact(request):
 
 # Update contact
 def update_contact(request, id):
-    contact = Contacts.objects.get(id=id)
+    contact = models.Contacts.objects.get(id=id)
     if request.method == "GET":
-        form = ContactForm(
+        form = forms.ContactForm(
             request.GET or None, instance=contact)
 
         return render(request, 'jewelry/pages/update_contact.html', context={
@@ -74,7 +73,7 @@ def update_contact(request, id):
         })
 
     else:
-        form = ContactForm(
+        form = forms.ContactForm(
             request.POST, request.FILES or None, instance=contact)
         if form.is_valid():
             form.save()
@@ -88,7 +87,7 @@ def update_contact(request, id):
 
 # Delete Contact
 def delete_contact(request, id):
-    contact = Contacts.objects.get(id=id)
+    contact = models.Contacts.objects.get(id=id)
     contact.delete()
 
     return redirect('/')
@@ -125,4 +124,23 @@ def update_jewel(request):
 
 # Settings jewelry
 def settings_jewel(request):
-    return render(request, 'jewelry/pages/settings_jewel.html')
+    daily_indicators = models.Indicators.objects.all().order_by('-id')
+    if request.method == "GET":
+        form = forms.IndicatorsForm(request.GET)
+
+        return render(request, 'jewelry/pages/settings_jewel.html', context={
+            'daily_indicators': daily_indicators,
+            'form': form,
+        })
+
+    else:
+        form = forms.IndicatorsForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return HttpResponseRedirect('')
+
+        return render(request, 'jewelry/pages/settings_jewel.html', context={
+            'daily_indicators': daily_indicators,
+            'form': form,
+        })

@@ -44,8 +44,14 @@
             </table>
         </div>
     </div>
-
-
+    <form action="" method="post">
+        {% csrf_token %}
+            {{ form.label.fine_gold }}
+            {{ form.fine_gold }}
+        <input type="submit" value="Save">
+            {{ form.parallel_dollar }} 
+        <input type="submit" value="Save">
+    </form>
     <div class="card mb-5 models" style="width: 40rem;">
         <div class="card-header">Models</div>
         <div class="card-block p-0">

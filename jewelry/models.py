@@ -1,7 +1,7 @@
 from django.db import models
 
 
-# Create your models here.
+# Model Contacts
 class Contacts(models.Model):
     first_name = models.CharField(max_length=32, null=False, blank=False)
     last_name = models.CharField(max_length=32, null=False, blank=False)
@@ -20,6 +20,7 @@ class Contacts(models.Model):
         return "%s %s" % (self.first_name, self.last_name)
 
 
+# Models Settings Jewelry
 class CategoryJewelry(models.Model):
     name = models.CharField(max_length=32, null=False, blank=False)
 
@@ -62,6 +63,7 @@ class Indicators(models.Model):
     parallel_dollar = models.FloatField(blank=True)
 
 
+# Model Jewelry
 class Jewelry(models.Model):
     GENRE_CHOICES = (
         ("Male", "Male"),
@@ -89,6 +91,7 @@ class Jewelry(models.Model):
         return self.product_name
 
 
+# Model Services Jewelry
 class Services(models.Model):
     PIECE_CHOICES = (
         ("Metal", "Metal"),
@@ -106,6 +109,7 @@ class Services(models.Model):
         return "%s %s" % (self.service, self.jewelry_id)
 
 
+# Model Pearls Jewelry
 class Pearls(models.Model):
     pearl = models.ForeignKey(
         TypesPearls, on_delete=models.SET_NULL, null=True)
@@ -120,6 +124,7 @@ class Pearls(models.Model):
         return "%s %s" % (self.pearl, self.jewelry_id)
 
 
+# Model Stones Jewelry
 class Stones(models.Model):
     stone = models.ForeignKey(
         TypesStones, on_delete=models.SET_NULL, null=True)
