@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from .models import (CategoryJewelry, Contacts, Jewelry, ModelsJewelry, Pearls,
-                     Services, Stones, TypesMetals, TypesPearls, TypesStones)
+from .models import (CategoryJewelry, Contacts, Indicators, Jewelry,
+                     ModelsJewelry, Pearls, Services, Stones, TypesMetals,
+                     TypesPearls, TypesStones)
 
 
 # Register your models here.
@@ -52,4 +53,9 @@ class Pearls(admin.ModelAdmin):
 
 @admin.register(Stones)
 class Stones(admin.ModelAdmin):
+    ...
+
+
+@admin.register(Indicators)
+class Indicators(admin.ModelAdmin):
     ...

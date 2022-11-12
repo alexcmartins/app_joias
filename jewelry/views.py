@@ -124,12 +124,15 @@ def update_jewel(request):
 
 # Settings jewelry
 def settings_jewel(request):
-    daily_indicators = models.Indicators.objects.all().order_by('-id')
+    # daily_indicators_id = models.Contacts.objects.get(id=id)
+    daily_indicators = models.Indicators.objects.all().order_by
+    ('-id')
     if request.method == "GET":
         form = forms.IndicatorsForm(request.GET)
 
         return render(request, 'jewelry/pages/settings_jewel.html', context={
             'daily_indicators': daily_indicators,
+            # 'daily_indicators_id': daily_indicators_id,
             'form': form,
         })
 
@@ -138,9 +141,17 @@ def settings_jewel(request):
         if form.is_valid():
             form.save()
 
-            return HttpResponseRedirect('')
+            return HttpResponseRedirect('jewelry/settings')
 
         return render(request, 'jewelry/pages/settings_jewel.html', context={
             'daily_indicators': daily_indicators,
             'form': form,
         })
+
+    # contact = models.Contacts.objects.get(id=id)
+    # contact.delete()
+
+    # return render(request, 'jewelry/pages/settings_jewel.html', context={
+        # 'daily_indicators': daily_indicators,
+        # 'form': form,
+        # })

@@ -59,8 +59,13 @@ class TypesPearls(models.Model):
 
 
 class Indicators(models.Model):
-    fine_gold = models.FloatField(blank=True)
-    parallel_dollar = models.FloatField(blank=True)
+    fine_gold = models.DecimalField(
+        max_digits=10, decimal_places=2, blank=True)
+    parallel_dollar = models.DecimalField(
+        max_digits=10, decimal_places=2, blank=True)
+
+    def __str__(self):
+        return "%s %s" % (self.fine_gold, self.parallel_dollar)
 
 
 # Model Jewelry

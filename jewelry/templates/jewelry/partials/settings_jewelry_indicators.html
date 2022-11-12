@@ -1,0 +1,32 @@
+<div class="form-indicators">
+    <form action="" method="post" style="width: 50%;">
+        {% csrf_token %}
+            {{ form }} 
+        <input type="submit" value="Save">
+    </form>
+</div>
+<div class="table-indicators">
+    <table class="table table-sm table-hover" style="width: 40%;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Fine Gold</th>
+                <th scope="col">Parallel Dollar</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          {% for indicators in daily_indicators %}
+            <tr>
+                <td>{{ indicators.id }}</td>
+                <td>{{ indicators.fine_gold }}</td>
+                <td>{{ indicators.parallel_dollar }}</td>
+                    <td>
+                        <a href="{% url 'jewelry:update-settings-indicators' indicators.id %}" class="btn btn-secondary" arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
+                        <a href=" {% url 'jewelry:delete-settings-indicators' indicators.id %} " class="btn btn-danger" arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
+                </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
