@@ -19,7 +19,7 @@ urlpatterns = [
     path('jewelry/update/<int:id>', views.update_jewel, name="update-jewel"),
     path('jewelry/settings', views.settings_jewel, name="settings-jewel"),
     path('jewelry/settings/indicators/update/<int:id>',
-         views.settings_jewel, name="update-settings-indicators"),
+         views.update_indicators, name="update-indicators"),
     path('jewelry/settings/indicators/delete/<int:id>',
-         views.settings_jewel, name="delete-settings-indicators"),
+         views.delete_indicators, name="delete-indicators"),
 ]
