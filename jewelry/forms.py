@@ -32,16 +32,16 @@ class ModelsJewelryForm(forms.ModelForm):
 class TypesMetalsForm(forms.ModelForm):
     class Meta:
         model = models.TypesMetals
-        fields = fields = "__all__"
+        fields = "__all__"
 
 
 class TypesStonesForm(forms.ModelForm):
     class Meta:
         model = models.TypesStones
-        fields = fields = "__all__"
+        fields = "__all__"
 
 
 class TypesPearlsForm(forms.ModelForm):
     class Meta:
         model = models.TypesPearls
-        fields = fields = "__all__"
+        fields = "__all__"

@@ -124,14 +124,16 @@ def update_jewel(request):
 
 # Settings jewelry
 def settings_jewel(request):
-    daily_indicators = models.Indicators.objects.all().order_by
-    ('-id')
+    daily_indicators = models.Indicators.objects.all().order_by('-id')
+    category_jewelry = models.CategoryJewelry.objects.all().order_by('-id')
     if request.method == "GET":
         form = forms.IndicatorsForm(request.GET)
-
+        form_cj = forms.CategoryJewelryForm(request.GET)
         return render(request, 'jewelry/pages/settings_jewel.html', context={
             'daily_indicators': daily_indicators,
+            'category_jewelry': category_jewelry,
             'form': form,
+            'form_cj': form_cj,
         })
 
     else:
@@ -147,6 +149,7 @@ def settings_jewel(request):
         })
 
 
+"""
 def update_indicators(request, id):
     indicators = models.Indicators.objects.get(id=id)
     if request.method == "GET":
@@ -171,6 +174,24 @@ def update_indicators(request, id):
                           'indicators': indicators,
                           'form': form,
                       })
+"""
+
+
+def update_indicators(request, id):
+    indicators = models.Indicators.objects.get(id=id)
+    form = forms.IndicatorsForm(request.POST or None, instance=indicators)
+    if request.method == "POST":
+        indicators = models.Indicators.objects.get(id=id)
+        form = forms.IndicatorsForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('jewelry:settings-jewel')
+
+    return render(request, 'jewelry/partials/update_indicators.html',
+                  context={
+                      'indicators': indicators,
+                      'form': form,
+                  })
 
 
 def delete_indicators(request, id):

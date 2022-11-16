@@ -12,30 +12,9 @@
                 <a href=" {% url 'jewelry:settings-jewel' %} "><button class="btn btn-functions" arialabel="settingsjewel"><i class="fa-solid fa-gear"></i>Settings Jewel</button></a>
                 <button class="btn btn-functions" arialabel="filterjewel"><i class="fa-solid fa-filter"></i>Filter Jewel</button>
             </div>
-            <div class="card mb-5 jewel">
-                <div class="card-header"><i class="fa-solid fa-ring"></i>List Jewelry</div>
-                <div class="container-dad">
-                <table id="data_jewel" class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Model</th>
-                        <th>Weight</th>
-                        <th>Metal</th>
-                        <th>Value</th>
-                        <th>+Info</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for jewel in jewelry %}
-                    {% include 'jewelry/partials/table.html' %}
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        </div>
+            <!--{% include 'jewelry/partials/table.html' %}-->
+            {% include 'jewelry/partials/card_jewel.html' %}
+
         </div>
 
     <!-- JavaScript for popover -->

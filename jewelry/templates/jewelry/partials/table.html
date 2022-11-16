@@ -1,22 +1,45 @@
-<tr>
-    <td>
-        <button type="button" class="btn btn_info" data-bs-toggle="popover" data-bs-placement="right"
-            data-bs-custom-class="custom-popover" data-bs-title="{{jewel.name}}"
-            data-bs-html="true" data-bs-content='<image src={{jewel.cover.url}}>'>
-            Image
-        </button>
-        </td>
-    <td><a href=" {% url 'jewelry:jewel' jewel.id %} ">{{jewel.name}}</a></td>
-    <td>{{jewel.category}}</td>
-    <td>{{jewel.models}}</td>
-    <td>{{jewel.weight|floatformat:"2"}} g</td>
-    <td>{{jewel.metal}}</td>
-    <td>R$ {{jewel.value|floatformat:"2g"}}</td>
-    <td>
-        <button type="button" class="btn btn_info" data-bs-toggle="popover" data-bs-placement="left"
-            data-bs-custom-class="custom-popover" data-bs-title="{{jewel.name}}"
-            data-bs-content="{{jewel.note}}">
-            + Info
-        </button>
-    </td>
-</tr>
+<div class="card mb-5 jewel">
+    <div class="card-header"><i class="fa-solid fa-ring"></i>List Jewelry</div>
+    <div class="container-dad">
+    <table id="data_jewel" class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Model</th>
+            <th>Weight</th>
+            <th>Metal</th>
+            <th>Value</th>
+            <th>+Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for jewel in jewelry %}
+        <tr>
+            <td>
+                <button type="button" class="btn btn_info" data-bs-toggle="popover" data-bs-placement="right"
+                    data-bs-custom-class="custom-popover" data-bs-title="{{jewel.name}}"
+                    data-bs-html="true" data-bs-content='<image src={{jewel.cover.url}}>'>
+                    Image
+                </button>
+                </td>
+            <td><a href=" {% url 'jewelry:jewel' jewel.id %} ">{{jewel.name}}</a></td>
+            <td>{{jewel.category}}</td>
+            <td>{{jewel.models}}</td>
+            <td>{{jewel.weight|floatformat:"2"}} g</td>
+            <td>{{jewel.metal}}</td>
+            <td>R$ {{jewel.value|floatformat:"2g"}}</td>
+            <td>
+                <button type="button" class="btn btn_info" data-bs-toggle="popover" data-bs-placement="left"
+                    data-bs-custom-class="custom-popover" data-bs-title="{{jewel.name}}"
+                    data-bs-content="{{jewel.note}}">
+                    + Info
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</div>

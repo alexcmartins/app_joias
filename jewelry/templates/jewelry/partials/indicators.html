@@ -1,5 +1,5 @@
 <div class="form-indicators">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropCreateIndicators">
         Adicionar Indicadores
     </button>
 </div>
@@ -20,6 +20,9 @@
                 <td>{{ indicators.fine_gold }}</td>
                 <td>{{ indicators.parallel_dollar }}</td>
                 <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editIndicators{{indicators.id}}">
+                        Atualizar Indicadores
+                    </button>
                     <a href="{% url 'jewelry:update-indicators' indicators.id %}" class="btn btn-secondary" arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
                     <a href="{% url 'jewelry:delete-indicators' indicators.id %}" class="btn btn-danger" arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
                 </td>
@@ -28,24 +31,7 @@
         </tbody>
     </table>
 </div>
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Indicators</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form action="" method="post">
-                {% csrf_token %}
-                    {{ form.as_p }} 
-                <input type="submit" value="Save">
-            </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Modal Create Indicators -->
+{% include 'jewelry/partials/add_indicators.html' %}
+{% include 'jewelry/partials/update_indicators.html' %}
+
