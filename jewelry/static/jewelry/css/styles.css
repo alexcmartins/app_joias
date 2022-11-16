@@ -21,6 +21,22 @@
     color: var(--primary-color-text);
 }
 
+/* color of the scroll thumb */
+*::-webkit-scrollbar {    
+    
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(138, 138, 144);    /* color of the scroll thumb */
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(206, 206, 206);    /* color of the scroll thumb */
+    border-radius: 20px;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -257,6 +273,40 @@ a:active {
     border-radius: 1rem;
     font-size: 1.5rem;
     overflow: auto;
+}
+
+.row-cols-5 {
+    height: 60rem;   
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.row-cols-5 > .col {
+    margin-top: 10px;
+    box-shadow: rgb(11 43 158 / 15%);
+    border-radius: 24px;
+}
+
+.row-cols-5 > .col > .card {
+    border-radius: 24px;
+}
+
+.card-img-top {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+.card-body > p {
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    overflow-y: scroll;
+    height: 250px;
+}
+
+.card > a {
+    margin: 0 auto;
 }
 
 /*Fixed top table*/
