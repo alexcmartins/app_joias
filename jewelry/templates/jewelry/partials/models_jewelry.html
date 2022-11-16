@@ -1,0 +1,37 @@
+<div class="form-models">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropCreateModels">
+        Adicionar Models
+    </button>
+</div>
+<div class="table-models">
+    <table class="table table-sm table-hover text-center" style="width: 40%;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Categorys</th>
+                <th scope="col">Models</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+        {% for models in model_jewelry %}
+            <tr>
+                <td>{{ models.id }}</td>
+                <td>{{ models.category }}</td>
+                <td>{{ models.name }}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModels{{models.id}}">
+                        Atualizar Models
+                    </button>
+                    <a href="{% url 'jewelry:update-models' models.id %}" class="btn btn-secondary" arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
+                    <a href="{% url 'jewelry:delete-models' models.id %}" class="btn btn-danger" arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- Modal Create Indicators -->
+{% include 'jewelry/partials/add_indicators.html' %}
+{% include 'jewelry/partials/update_indicators.html' %}
+

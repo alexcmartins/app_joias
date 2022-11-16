@@ -126,14 +126,18 @@ def update_jewel(request):
 def settings_jewel(request):
     daily_indicators = models.Indicators.objects.all().order_by('-id')
     category_jewelry = models.CategoryJewelry.objects.all().order_by('-id')
+    model_jewelry = models.ModelsJewelry.objects.all().order_by('-id')
     if request.method == "GET":
         form = forms.IndicatorsForm(request.GET)
         form_cj = forms.CategoryJewelryForm(request.GET)
+        form_mj = forms.ModelsJewelryForm(request.GET)
         return render(request, 'jewelry/pages/settings_jewel.html', context={
             'daily_indicators': daily_indicators,
             'category_jewelry': category_jewelry,
+            'model_jewelry': model_jewelry,
             'form': form,
             'form_cj': form_cj,
+            'form_mj': form_mj,
         })
 
     else:

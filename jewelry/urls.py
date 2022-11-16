@@ -22,4 +22,12 @@ urlpatterns = [
          views.update_indicators, name="update-indicators"),
     path('jewelry/settings/indicators/delete/<int:id>',
          views.delete_indicators, name="delete-indicators"),
+    path('jewelry/settings/category/update/<int:id>',
+         views.delete_indicators, name="update-category"),
+    path('jewelry/settings/category/delete/<int:id>',
+         views.delete_indicators, name="delete-category"),
+    path('jewelry/settings/models/update/<int:id>',
+         views.delete_indicators, name="update-models"),
+    path('jewelry/settings/models/delete/<int:id>',
+         views.delete_indicators, name="delete-models"),
 ]

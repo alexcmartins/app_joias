@@ -21,8 +21,8 @@
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editCategory{{category.id}}">
                         Atualizar Categorias
                     </button>
-                    <a href="{% url 'jewelry:update-indicators' category.id %}" class="btn btn-secondary" arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
-                    <a href="{% url 'jewelry:delete-indicators' category.id %}" class="btn btn-danger" arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
+                    <a href="{% url 'jewelry:update-category' category.id %}" class="btn btn-secondary" arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
+                    <a href="{% url 'jewelry:delete-category' category.id %}" class="btn btn-danger" arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
                 </td>
             </tr>
         {% endfor %}
