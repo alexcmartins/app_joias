@@ -127,17 +127,21 @@ def settings_jewel(request):
     daily_indicators = models.Indicators.objects.all().order_by('-id')
     category_jewelry = models.CategoryJewelry.objects.all().order_by('-id')
     model_jewelry = models.ModelsJewelry.objects.all().order_by('-id')
+    pearls = models.TypesPearls.objects.all().order_by('-id')
     if request.method == "GET":
         form = forms.IndicatorsForm(request.GET)
         form_cj = forms.CategoryJewelryForm(request.GET)
         form_mj = forms.ModelsJewelryForm(request.GET)
+        form_pearls = forms.TypesPearlsForm(request.GET)
         return render(request, 'jewelry/pages/settings_jewel.html', context={
             'daily_indicators': daily_indicators,
             'category_jewelry': category_jewelry,
             'model_jewelry': model_jewelry,
+            'pearls': pearls,
             'form': form,
             'form_cj': form_cj,
             'form_mj': form_mj,
+            'form_pearls': form_pearls,
         })
 
     else:
@@ -153,40 +157,11 @@ def settings_jewel(request):
         })
 
 
-"""
-def update_indicators(request, id):
-    indicators = models.Indicators.objects.get(id=id)
-    if request.method == "GET":
-        form = forms.IndicatorsForm(
-            request.GET or None, instance=indicators)
-
-        return render(request, 'jewelry/partials/update_indicators.html',
-                      context={
-                          'indicators': indicators,
-                          'form': form,
-                      })
-
-    else:
-        form = forms.IndicatorsForm(
-            request.POST, request.FILES or None, instance=indicators)
-        if form.is_valid():
-            form.save()
-            return redirect('jewelry:settings-jewel')
-
-        return render(request, 'jewelry/partials/update_indicators.html',
-                      context={
-                          'indicators': indicators,
-                          'form': form,
-                      })
-"""
-
-
 def update_indicators(request, id):
     indicators = models.Indicators.objects.get(id=id)
     form = forms.IndicatorsForm(request.POST or None, instance=indicators)
     if request.method == "POST":
-        indicators = models.Indicators.objects.get(id=id)
-        form = forms.IndicatorsForm(request.POST or None)
+        form = forms.IndicatorsForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('jewelry:settings-jewel')
@@ -203,3 +178,130 @@ def delete_indicators(request, id):
     indicators.delete()
 
     return redirect('jewelry:settings-jewel')
+
+
+def update_models_settings(request, id):
+    model_jewelry = models.ModelsJewelry.objects.get(id=id)
+    form = forms.ModelsJewelryForm(
+        request.POST or None, instance=model_jewelry)
+    if request.method == "POST":
+        form = forms.ModelsJewelryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('jewelry:settings-jewel')
+
+    return render(request, 'jewelry/partials/update_indicators.html',
+                  context={
+                      'model_jewelry': model_jewelry,
+                      'form': form,
+                  })
+
+
+def delete_models_settings(request, id):
+    model_jewelry = models.ModelsJewelry.objects.get(id=id)
+    model_jewelry.delete()
+
+    return redirect('jewelry:settings-jewel')
+
+
+def update_category_settings(request, id):
+    category_jewelry = models.CategoryJewelry.objects.get(id=id)
+    form = forms.CategoryJewelryForm(
+        request.POST or None, instance=category_jewelry)
+    if request.method == "POST":
+        form = forms.CategoryJewelryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('jewelry:settings-jewel')
+
+    return render(request, 'jewelry/partials/update_indicators.html',
+                  context={
+                      'category_jewelry': category_jewelry,
+                      'form': form,
+                  })
+
+
+def delete_category_settings(request, id):
+    category_jewelry = models.CategoryJewelry.objects.get(id=id)
+    category_jewelry.delete()
+
+    return redirect('jewelry:settings-jewel')
+
+
+def update_pearls_settings(request, id):
+    pearls = models.Pearls.objects.get(id=id)
+    form = forms.TypesPearlsForm(request.POST or None, instance=pearls)
+    if request.method == "POST":
+        form = forms.TypesPearlsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('jewelry:settings-jewel')
+
+    return render(request, 'jewelry/partials/update_indicators.html',
+                  context={
+                      'pearls': pearls,
+                      'form': form,
+                  })
+
+
+def delete_pearls_settings(request, id):
+    pearls = models.Pearls.objects.get(id=id)
+    pearls.delete()
+
+    return redirect('jewelry:settings-jewel')
+
+
+def update_stones_settings(request, id):
+    stones = models.Stones.objects.get(id=id)
+    form = forms.TypesStonesForm(request.POST or None, instance=stones)
+    if request.method == "POST":
+        form = forms.TypesStonesForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('jewelry:settings-jewel')
+
+    return render(request, 'jewelry/partials/update_indicators.html',
+                  context={
+                      'stones': stones,
+                      'form': form,
+                  })
+
+
+def delete_stones_settings(request, id):
+    stones = models.Stones.objects.get(id=id)
+    stones.delete()
+
+    return redirect('jewelry:settings-jewel')
+
+
+def teste(request):
+    # condição caso o GET seja requisitado
+    if request.method == "GET":
+        """Aqui pegamos o campo selecionado para isso precisamos
+        inserir um name="select" no proprio select"""
+        select_itens = request.GET.get('select', '')
+        # Aqui avaliamos se ele está nulo ou não
+        if select_itens != '':
+            # como é um teste eu fui printando o resultado
+            print(select_itens)
+            """ Aqui eu atribui a uma variavel a busca, usando filer e Q
+            Como nesse meu model eu estou usando um forenKey precisei
+            primeiro mencionar o model relacionado category, depois o campo
+            no model, em seguida utilizei o icontains, mas dependendo do
+            caso pode ser outro."""
+            models_filters = models.ModelsJewelry.objects.filter(
+                Q(category__name__icontains=select_itens),
+            ).order_by('-category')
+            # Aqui acompanhei mais uma vez o resultado
+            print(models_filters)
+
+            return render(request, 'jewelry/pages/add_teste.html', context={
+                'select_itens': select_itens,
+                'models_filters': models_filters,
+            })
+        else:
+            models_1 = models.ModelsJewelry.objects.all().order_by('-id')
+            print(models_1)
+            return render(request, 'jewelry/pages/add_teste.html', context={
+                'models_1': models_1,
+            })

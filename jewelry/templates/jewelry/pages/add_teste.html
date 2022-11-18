@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-blank"></div>
+<div class="container-main">
+    <hr>
+    {% for model in models_1 %}
+        <p>{{model.category}}</p>
+        <p>{{model.name}}</p>
+    {% endfor %}    
+    <hr>
+    <form action="" method="GET">
+        <select name="select" class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            {% for model in models_1 %}
+            <option value="{{model.category}}">{{model.category}}</option>
+            {% endfor %}
+        </select>
+        <input  type = "submit" value="Submit">
+    </form>
+    <hr>
+    <form action="" method="GET">
+        <select name="select_1" class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            {% for model in models_filters %}
+            <option value="{{model.name}}">{{model.name}}</option>
+            {% endfor %}
+        </select>
+        <input  type = "submit" value="Submit">
+    </form>
+</div>
+{% endblock content %}

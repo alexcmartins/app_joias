@@ -1,7 +1,7 @@
 <div class="col">
     <div class="card">
         <div class="card-header">
-            Models
+            Pearls
         </div>
         <div class="card-body">
             <div class="table-models">
@@ -9,21 +9,18 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Categorys</th>
-                            <th scope="col">Models</th>
-                            <th scope="col">Options</th>
+                            <th scope="col">Types</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                        {% for models in model_jewelry %}
+                        {% for pearl in pearls %}
                         <tr>
-                            <td>{{ models.id }}</td>
-                            <td>{{ models.category }}</td>
-                            <td>{{ models.name }}</td>
+                            <td>{{ pearl.id }}</td>
+                            <td>{{ pearl.name }}</td>
                             <td>
-                                <a href="{% url 'jewelry:update-models-settings' models.id %}" class="btn btn-secondary"
+                                <a href="{% url 'jewelry:update-pearls-settings' pearl.id %}" class="btn btn-secondary"
                                     arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
-                                <a href="{% url 'jewelry:delete-models-settings' models.id %}" class="btn btn-danger"
+                                <a href="{% url 'jewelry:delete-pearls-settings' pearl.id %}" class="btn btn-danger"
                                     arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
                             </td>
                         </tr>

@@ -3,13 +3,11 @@
 {% block content %}
 <div class="container-blank"></div>
 <div class="container-main">
-
-    <br>
-        {% include 'jewelry/partials/indicators.html' %}
-    <br>
-        {% include 'jewelry/partials/category_jewelry.html' %}
-    <br>
-        {% include 'jewelry/partials/models_jewelry.html' %}
-
+    <div class="row row-cols-3">
+            {% include 'jewelry/partials/indicators.html' %}
+            {% include 'jewelry/partials/category_jewelry.html' %}
+            {% include 'jewelry/partials/models_jewelry.html' %}
+            {% include 'jewelry/partials/types_pearls.html' %}
+    </div>
 </div>
 {% endblock content %}

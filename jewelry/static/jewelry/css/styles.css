@@ -46,9 +46,6 @@ body {
     background: var(--primary-color-cream);
 }
 
-/* Card Settings */
-
-
 /* menu settings*/
 .nav {
     font-size: 1.5rem;
@@ -309,25 +306,10 @@ a:active {
     margin: 0 auto;
 }
 
-/*Fixed top table*/
-/*.table-striped thead th {
-    position: sticky;
-    top: 0;
-}*/
-
-#data_jewel th {
-    background-color: var(--primary-color-background);
-}
-
-img {
-    height: 100%;
-    width: 100%;
-}
-
-thead {
-    background-color: var(--primary-color-background);
-    font-size: 1.5rem;
-    color: black;
+/* Card in Settings Jewelry */
+.row.row-cols-3 > .col > .card > .card-body {
+    overflow-y: auto;
+    height: 250px;
 }
 
 /*btn generic adjustments*/
