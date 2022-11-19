@@ -128,20 +128,26 @@ def settings_jewel(request):
     category_jewelry = models.CategoryJewelry.objects.all().order_by('-id')
     model_jewelry = models.ModelsJewelry.objects.all().order_by('-id')
     pearls = models.TypesPearls.objects.all().order_by('-id')
+    stones = models.TypesStones.objects.all().order_by('-id')
+    metals = models.TypesMetals.objects.all().order_by('-id')
     if request.method == "GET":
         form = forms.IndicatorsForm(request.GET)
         form_cj = forms.CategoryJewelryForm(request.GET)
         form_mj = forms.ModelsJewelryForm(request.GET)
         form_pearls = forms.TypesPearlsForm(request.GET)
+        form_stones = forms.TypesStonesForm(request.GET)
         return render(request, 'jewelry/pages/settings_jewel.html', context={
             'daily_indicators': daily_indicators,
             'category_jewelry': category_jewelry,
             'model_jewelry': model_jewelry,
             'pearls': pearls,
+            'stones': stones,
+            'metals': metals,
             'form': form,
             'form_cj': form_cj,
             'form_mj': form_mj,
             'form_pearls': form_pearls,
+            'form_stones': form_stones,
         })
 
     else:
@@ -229,7 +235,7 @@ def delete_category_settings(request, id):
 
 
 def update_pearls_settings(request, id):
-    pearls = models.Pearls.objects.get(id=id)
+    pearls = models.TypesPearls.objects.get(id=id)
     form = forms.TypesPearlsForm(request.POST or None, instance=pearls)
     if request.method == "POST":
         form = forms.TypesPearlsForm(request.POST)
@@ -245,14 +251,14 @@ def update_pearls_settings(request, id):
 
 
 def delete_pearls_settings(request, id):
-    pearls = models.Pearls.objects.get(id=id)
+    pearls = models.TypesPearls.objects.get(id=id)
     pearls.delete()
 
     return redirect('jewelry:settings-jewel')
 
 
 def update_stones_settings(request, id):
-    stones = models.Stones.objects.get(id=id)
+    stones = models.TypesStones.objects.get(id=id)
     form = forms.TypesStonesForm(request.POST or None, instance=stones)
     if request.method == "POST":
         form = forms.TypesStonesForm(request.POST)
@@ -268,8 +274,31 @@ def update_stones_settings(request, id):
 
 
 def delete_stones_settings(request, id):
-    stones = models.Stones.objects.get(id=id)
+    stones = models.TypesStones.objects.get(id=id)
     stones.delete()
+
+    return redirect('jewelry:settings-jewel')
+
+
+def update_metals_settings(request, id):
+    metals = models.TypesMetals.objects.get(id=id)
+    form = forms.TypesMetalsForm(request.POST or None, instance=metals)
+    if request.method == "POST":
+        form = forms.TypesMetalsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('jewelry:settings-jewel')
+
+    return render(request, 'jewelry/partials/update_indicators.html',
+                  context={
+                      'metals': metals,
+                      'form': form,
+                  })
+
+
+def delete_metals_settings(request, id):
+    metals = models.TypesMetals.objects.get(id=id)
+    metals.delete()
 
     return redirect('jewelry:settings-jewel')
 

@@ -312,6 +312,15 @@ a:active {
     height: 250px;
 }
 
+.row.row-cols-3 > .col > .card {
+    margin-bottom: 15px;
+}
+
+.row.row-cols-3 > .col > .card > .card-footer {
+    background-color: #6B2299;
+    background-size: 5px;
+}
+
 /*btn generic adjustments*/
 .btn {
     transition-duration: 0.4s;

@@ -38,5 +38,9 @@ urlpatterns = [
          views.delete_pearls_settings, name="update-pearls-settings"),
     path('jewelry/settings/pearls/delete/<int:id>',
          views.delete_pearls_settings, name="delete-pearls-settings"),
+    path('jewelry/settings/metals/update/<int:id>',
+         views.delete_metals_settings, name="update-metals-settings"),
+    path('jewelry/settings/metals/delete/<int:id>',
+         views.delete_metals_settings, name="delete-metals-settings"),
     path('teste/', views.teste, name="teste"),
 ]

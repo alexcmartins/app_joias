@@ -1,0 +1,33 @@
+<div class="col">
+    <div class="card">
+        <div class="card-header">
+            Metals
+        </div>
+        <div class="card-body">
+            <div class="table-metals">
+                <table class="table table-sm table-striped table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Types</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        {% for metal in metals %}
+                        <tr>
+                            <td>{{ metal.id }}</td>
+                            <td>{{ metal.name }}</td>
+                            <td>
+                                <a href="{% url 'jewelry:update-metals-settings' metal.id %}" class="btn btn-secondary"
+                                    arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
+                                <a href="{% url 'jewelry:delete-metals-settings' metal.id %}" class="btn btn-danger"
+                                    arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
