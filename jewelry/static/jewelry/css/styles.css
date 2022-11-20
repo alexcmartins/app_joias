@@ -14,6 +14,12 @@
     --primary-color-purple-2: #6B2299;
     --primary-color-purple-3: #593975;
     --primary-color-purple-4: #DEC3F7;
+    --color-scroll-blue: #13293D;
+    --color-scroll-blue-table: #13293d2d;
+    --color-scroll-blue-1: #006494;
+    --color-scroll-blue-2: #247BA0;
+    --color-scroll-blue-3: #9dd4f4;
+    --color-scroll-blue-4: #E8F1F2;
 }
 
 * {
@@ -24,18 +30,23 @@
     box-sizing: boder-box;
 }
 
+/* Change color table-striped */
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: var(--color-scroll-blue-table);
+}
+
 /* color of the scroll thumb */
 *::-webkit-scrollbar {
     width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color-purple-3);    /* color of the scroll thumb */
+    background-color: var(--color-scroll-blue);    /* color of the scroll thumb */
     border-radius: 20px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgb(206, 206, 206);    /* color of the scroll thumb */
+    background-color: var(--color-scroll-blue-4);    /* color of the scroll thumb */
     border-radius: 20px;
 }
 
@@ -50,11 +61,11 @@ body {
 }
 
 /* menu settings*/
-.nav {
+.navbar-nav {
     font-size: 1.5rem;
     --bs-nav-link-hover-color: var(--primary-color-green);
+    --bs-nav-link-color: var(--color-scroll-blue);
     margin: 0 auto;
-    
 }
 
 .main-header.container {
@@ -68,7 +79,7 @@ i {
 
 /* search adjustments */
 .search-form {
-    border: .2rem solid var(--primary-color-purple-2);
+    border: .2rem solid var(--color-scroll-blue-2);
     max-width: 80%;
     position: relative;
     border-radius: 0.5rem;
@@ -82,18 +93,17 @@ i {
 }
 
 .search-form:focus-within {
-    border-color: #A0CD60;
-    background: #ddd;
+    border-color: var(--color-scroll-blue-1);
+    background: var(--color-scroll-blue-4);
 }
 
 .search-button:focus {
-    outline: 1px solid var(--primary-color-green);
+    outline: 1px solid var(--color-scroll-blue-1);
     background: rgba(0, 0, 0, .05);
 }
 
 .search-form:focus-within .fa-magnifying-glass {
-    color: #A0CD60;
-
+    color: var(--color-scroll-blue-2);
 }
 
 .search-input,
@@ -123,15 +133,15 @@ i {
 }
 
 .fa-magnifying-glass {
-    font-size: 2.0rem;
+    /*font-size: 2.0rem;*/
     outline: none;
+    color: var(--color-scroll-blue-1);
 }
 
 /* Central container settings base.html */
 .container {
     font-size: 2.2rem;
     margin-top: 1.5rem;
-    --bs-nav-link-hover-color: var(--primary-color-text-hover);
     margin: 0 auto;
 }
 
@@ -176,7 +186,7 @@ i {
     display: flex;
     flex-direction: column;
     max-height: 80rem;
-    
+    margin: 1rem 0;
 }
 
 .container-dad {
@@ -190,7 +200,7 @@ i {
 }
 
 .form-label {
-    color:rgb(167, 166, 166);
+    color: var(--primary-color-green);
     margin-bottom: 0;
     margin-top: 15px;
     margin-left: 10px;
@@ -249,13 +259,13 @@ i {
     max-height: 70rem;
 }
 
-.row.row-cols-4 {
-    height: 60rem;   
+hr {
+    background-color: var(--color-scroll-blue);
+    color: var(--color-scroll-blue);
 }
 
-hr {
-    background-color: var(--primary-color-purple-2);
-    color: var(--primary-color-purple-2);
+.row.row-cols-4 {
+    height: 60rem;   
 }
 
 .row.row-cols-4 > .col {
@@ -266,6 +276,11 @@ hr {
 
 .row.row-cols-4 > .col > .card {
     border-radius: 24px;
+    background-color: var(--color-scroll-blue-4);
+}
+
+.row.row-cols-4 > .col > .card > .row {
+    margin: 0 auto;
 }
 
 .card-img-top {
@@ -284,6 +299,7 @@ hr {
 
 .card > a {
     margin: 0 auto;
+    margin-bottom: 5px;
 }
 
 /* Card in Settings Jewelry */
@@ -407,6 +423,7 @@ hr {
     width: 70%;
     max-height: 80rem;
     float: left;
+    /*background-color: var(--color-scroll-blue-4);*/
 }
 
 /* Card Home - Contacts */
@@ -414,7 +431,7 @@ hr {
     width: 27%;
     max-height: 80rem;
     float: right;
-    background-color: var(--primary-color-cream);
+    /*background-color: var(--color-scroll-blue-4);*/
 }
 
 .container-search-home {
@@ -446,7 +463,8 @@ section {
     border-radius: 5px;
     float: left;
     width: 100%;
-    background-color: var(--primary-color-background);
+    /*background-color: var(--primary-color-background);*/
+    background-color: var(--color-scroll-blue-4);
 }
         
 .content {
@@ -494,20 +512,21 @@ aside {
 }
 
 .btn-details {
-    width: 50%;
-    background-color: var(--primary-color-green);
+    width: 40%;
+    background-color: var(--color-scroll-blue);
     color: var(--primary-color-background);
-    border-radius: 5%;
+    border-radius: 3%;
 }
 
 .btn-details:hover {
-    background-color: var(--primary-color-green-2);
+    background-color: var(--primary-color-green);
     color: var(--primary-color-background);
 }
 
 /* Contact view */
 .mb-5-contact {
     max-height: 70rem;
+    margin: 1rem 0;
 }
 
 .figure-img > img {

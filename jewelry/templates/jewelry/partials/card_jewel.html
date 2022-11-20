@@ -8,9 +8,21 @@
                     <h5 class="card-title">{{jewel.name}}</h5>
                     <p class="card-text">{{jewel.note}}.</p>
                 </div>
-                <i class="fa-sharp fa-solid fa-ring"></i>
-                <link type="image/png" sizes="16x16" rel="icon" href=".../icons8-pearl-16.png">
-                <a href="{% url 'jewelry:jewel' jewel.id %}" class="btn btn-primary">Details</a>
+                <div class="row">
+                    <div class="col">
+                        <i class="fa-sharp fa-solid fa-ring"></i>
+                    </div>
+                    <div class="col">
+                        <i class="fa-sharp fa-solid fa-ring"></i>
+                    </div>
+                    <div class="col">
+                        <i class="fa-sharp fa-solid fa-ring"></i>
+                    </div>
+                    <div class="col">
+                        <i class="fa-sharp fa-solid fa-ring"></i>
+                    </div>
+                </div>
+                <a href="{% url 'jewelry:jewel' jewel.id %}" class="btn btn-details">Details</a>
             </div>
         </div>
         {% endfor %}
