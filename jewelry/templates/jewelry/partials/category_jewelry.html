@@ -19,7 +19,7 @@
                             <td>{{ category.id }}</td>
                             <td>{{ category.name }}</td>
                             <td>
-                                <a href="{% url 'jewelry:update-category-settings' category.id %}" class="btn btn-secondary"
+                                <a href="{% url 'jewelry:update-category-settings' category.id %}" class="btn btn-warning"
                                     arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
                                 <a href="{% url 'jewelry:delete-category-settings' category.id %}" class="btn btn-danger"
                                     arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
@@ -30,5 +30,6 @@
                 </table>
             </div>
         </div>
+        <div class="card-footer"></div>
     </div>
 </div>

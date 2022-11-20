@@ -1,34 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
-    --primary-color-text: #38184C;
-    --primary-color-background: #FFFFFA;
-    --primary-color-background-footer: #1C646D;
-    --primary-color-background-header: #CEF09D;
+    --primary-color-text-primary: #38184C;
+    --primary-color-text-secondary: #000000;
+    --primary-color-background: #ffffff;
+    --primary-color-green: #1C646D;
+    --primary-color-green-2: #47c77a;
     --primary-color-text-hover: #1F0802;
     --primary-color-lime: #A0CD60;
     --primary-color-cream: #f7f4eb;
-    --primary-color-light-purple: #C66BFF;
-    --primary-color-purple-second: #6B2299;
+    --primary-color-purple: #C66BFF;
+    --primary-color-purple-2: #6B2299;
+    --primary-color-purple-3: #593975;
+    --primary-color-purple-4: #DEC3F7;
 }
 
 * {
     padding: 0;
     margin: 0;
     /*font-size: 1.5rem;*/
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Roboto', sans-serif;
     box-sizing: boder-box;
-    color: var(--primary-color-text);
 }
 
 /* color of the scroll thumb */
-*::-webkit-scrollbar {    
-    
-    width: 12px;
+*::-webkit-scrollbar {
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(138, 138, 144);    /* color of the scroll thumb */
+    background-color: var(--primary-color-purple-3);    /* color of the scroll thumb */
     border-radius: 20px;
 }
 
@@ -42,14 +44,15 @@ html {
 }
 
 body {
+    color: var(--primary-color-text-secondary);
     font-size: 1.5rem;
-    background: var(--primary-color-cream);
+    background: var(--primary-color-background);
 }
 
 /* menu settings*/
 .nav {
     font-size: 1.5rem;
-    --bs-nav-link-hover-color: var(--primary-color-text-hover);
+    --bs-nav-link-hover-color: var(--primary-color-green);
     margin: 0 auto;
     
 }
@@ -63,29 +66,9 @@ i {
     margin: 5px;
 }
 
-/* unvisited link */
-a:link {
-    color: var(--primary-color-text);
-}
-
-/* visited link */
-a:visited {
-    color: var(--primary-color-text);
-}
-
-/* mouse over link */
-a:hover {
-    color: var(--primary-color-text-hover);
-}
-
-/* selected link */
-a:active {
-    color: var(--primary-color-text);
-}
-
 /* search adjustments */
 .search-form {
-    border: .2rem solid var(--primary-color-text);
+    border: .2rem solid var(--primary-color-purple-2);
     max-width: 80%;
     position: relative;
     border-radius: 0.5rem;
@@ -104,7 +87,7 @@ a:active {
 }
 
 .search-button:focus {
-    outline: 1px solid var(--primary-color-background-header);
+    outline: 1px solid var(--primary-color-green);
     background: rgba(0, 0, 0, .05);
 }
 
@@ -266,25 +249,22 @@ a:active {
     max-height: 70rem;
 }
 
-.table-striped {
-    border-radius: 1rem;
-    font-size: 1.5rem;
-    overflow: auto;
-}
-
-.row-cols-5 {
+.row.row-cols-4 {
     height: 60rem;   
-    margin-left: 5px;
-    margin-right: 5px;
 }
 
-.row-cols-5 > .col {
-    margin-top: 10px;
+hr {
+    background-color: var(--primary-color-purple-2);
+    color: var(--primary-color-purple-2);
+}
+
+.row.row-cols-4 > .col {
+    margin-bottom: 25px;
     box-shadow: rgb(11 43 158 / 15%);
     border-radius: 24px;
 }
 
-.row-cols-5 > .col > .card {
+.row.row-cols-4 > .col > .card {
     border-radius: 24px;
 }
 
@@ -317,44 +297,13 @@ a:active {
 }
 
 .row.row-cols-3 > .col > .card > .card-footer {
-    background-color: #6B2299;
+    /*background-color: #6B2299;*/
     background-size: 5px;
 }
 
 /*btn generic adjustments*/
 .btn {
     transition-duration: 0.4s;
-}
-
-/*popover adjustments*/
-.popover-body {
-    font-size: 1.5rem;
-    background-color: beige;
-    width: 100%;
-    height: 100%;
-}
-
-.popover-header {
-    width: 100%;
-}
-
-.custom-popover {
-    --bs-popover-max-width: 35rem;
-    --bs-popover-border-color: var(--primary-color-text);
-    --bs-popover-header-bg: var(--primary-color-text);
-    --bs-popover-header-color: var(--bs-white);
-    --bs-popover-body-padding-x: 1rem;
-    --bs-popover-body-padding-y: .5rem;
-    --bs-popover-header-font-size: 1.5rem;
-}
-
-.btn_info {
-    font-size: 1.2rem;
-    background-color: var(--primary-color-background-header);
-}
-
-.btn_info:hover {
-    background-color: var(--primary-color-lime);
 }
 
 /* Search Jewel */
@@ -465,6 +414,7 @@ a:active {
     width: 27%;
     max-height: 80rem;
     float: right;
+    background-color: var(--primary-color-cream);
 }
 
 .container-search-home {
@@ -496,7 +446,7 @@ section {
     border-radius: 5px;
     float: left;
     width: 100%;
-    background-color: var(--primary-color-background-header);
+    background-color: var(--primary-color-background);
 }
         
 .content {
@@ -519,7 +469,7 @@ section {
 aside {
     float: left;
     width: 100%;
-    color: var(--primary-color-background);
+    color: var(--primary-color-green);
     margin-top: 5px;
 }
 
@@ -544,9 +494,15 @@ aside {
 }
 
 .btn-details {
-    width: 35%;
-    background-color: var(--primary-color-light-purple);
-    border-radius: 3%;
+    width: 50%;
+    background-color: var(--primary-color-green);
+    color: var(--primary-color-background);
+    border-radius: 5%;
+}
+
+.btn-details:hover {
+    background-color: var(--primary-color-green-2);
+    color: var(--primary-color-background);
 }
 
 /* Contact view */
