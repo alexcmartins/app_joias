@@ -10,7 +10,13 @@
     </div>
     </div>
     <div class="card mb-3">
-        <div class="card-header"><i class="fa-solid fa-circle-user"></i>Contact <a href=" {% url 'jewelry:new-contact' %} "><button class="btn btn-functions" arialabel="newcontact"><i class="fa-solid fa-plus"></i>New Contact</button></a></div>
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <i class="fa-solid fa-circle-user"></i>Contact <a href=" {% url 'jewelry:new-contact' %} "><button class="btn btn-new" arialabel="newcontact"><i class="fa-solid fa-plus"></i></button></a>
+                </div>
+            </div>
+        </div>    
         <div class="container-dad">
         <div class="container-search-home">
             {% include 'jewelry/partials/search.html' %} 
