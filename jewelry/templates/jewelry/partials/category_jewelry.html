@@ -24,9 +24,9 @@
                             <td>{{ category.name }}</td>
                             <td>
                                 <a href="{% url 'jewelry:update-category-settings' category.id %}" class="btn btn-warning"
-                                    arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
+                                    arialabel="update-category"><i class="fa-solid fa-rotate-right"></i>Update</a>
                                 <a href="{% url 'jewelry:delete-category-settings' category.id %}" class="btn btn-danger"
-                                    arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
+                                    arialabel="delete-category"><i class="fa-solid fa-trash"></i>Remove</a>
                             </td>
                         </tr>
                         {% endfor %}

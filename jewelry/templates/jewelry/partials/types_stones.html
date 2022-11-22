@@ -24,9 +24,9 @@
                             <td>{{ stone.name }}</td>
                             <td>
                                 <a href="{% url 'jewelry:update-stones-settings' stone.id %}" class="btn btn-warning"
-                                    arialabel="update-contact"><i class="fa-solid fa-rotate-right"></i>Update</a>
+                                    arialabel="update-stones"><i class="fa-solid fa-rotate-right"></i>Update</a>
                                 <a href="{% url 'jewelry:delete-stones-settings' stone.id %}" class="btn btn-danger"
-                                    arialabel="delete-contact"><i class="fa-solid fa-trash"></i>Remove</a>
+                                    arialabel="delete-stones"><i class="fa-solid fa-trash"></i>Remove</a>
                             </td>
                         </tr>
                         {% endfor %}

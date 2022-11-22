@@ -56,7 +56,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'base_templates'
+            BASE_DIR / 'base_templates',
+            BASE_DIR / 'jewelry/templates/jewelry/pages'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
